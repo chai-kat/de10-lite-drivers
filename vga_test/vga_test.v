@@ -5,11 +5,11 @@
 // first 3 are inputs from the framebuffer
 module vga_test(
     input MAX10_CLK1_50,
-    output [3:0] VGA_B,
-    output [3:0] VGA_R,
-    output [3:0] VGA_G,
-    output VGA_HS,
-    output VGA_VS 
+    output reg [3:0] VGA_B,
+    output reg [3:0] VGA_R,
+    output reg [3:0] VGA_G,
+    output reg VGA_HS,
+    output reg VGA_VS 
 );
 
 // there are 1040 pixels in a line, so we keep track of where we are
