@@ -147,6 +147,8 @@ always @(posedge MAX10_CLK1_50) begin
 	hsync_counter = hsync_counter + 1;
 end
 
+endmodule
+
 // TODO: make this better by having the hline be its own module. 
 // then have it feed out a "data ready" on the negative edge of the prev clock to when we want it
 // and on the posedge expect the data to be ready for display on VGA and set the RGB appropriately. 
