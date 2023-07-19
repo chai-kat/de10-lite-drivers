@@ -9,7 +9,7 @@ module vga_test(
     output VGA_R[3:0],
     output VGA_G[3:0],
     output VGA_HS,
-    output VGA_VS, 
+    output VGA_VS 
 );
 
 // there are 1040 pixels in a line, so we keep track of where we are
