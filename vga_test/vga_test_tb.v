@@ -1,15 +1,17 @@
+`timescale 1ps/1ps
+
 module vga_test_tb(
 
 );
 
 reg clk;
-reg [3:0] B;
-reg [3:0] G;
-reg [3:0] R;
-reg HS;
-reg VS;
+wire [3:0] B;
+wire [3:0] G;
+wire [3:0] R;
+wire HS;
+wire VS;
 
-uut vga_test(
+vga_test uut(
     .MAX10_CLK1_50(clk),
     .VGA_B(B),
     .VGA_R(R),
@@ -20,7 +22,10 @@ uut vga_test(
 
 initial begin
     clk = 1'b0;
-    forever #10 clk = ~clk;
+end
+
+always begin
+   #10 clk = ~clk;
 end
 
 endmodule
