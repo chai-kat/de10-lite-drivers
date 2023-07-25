@@ -26,7 +26,14 @@ initial begin
 end
 
 always @(negedge MAX10_CLK1_50) begin
-    hsync_counter = hsync_counter + 1;
+    // hsync counter (pixel count) can go up to 1039, and then needs to reset to 0
+    if (hsync_counter <= 1039) begin
+        hsync_counter = hsync_counter + 1;
+    end
+    else begin
+        hsync_counter = 0;
+    end
+
 end
 
 // TODO: the <= is combinatorial, right? 
@@ -53,7 +60,7 @@ always @(posedge MAX10_CLK1_50) begin
             VGA_HS = 1'b0;
         end
         else if (hsync_counter == 1039) begin
-            hsync_counter = 0;
+            
             vsync_counter = vsync_counter + 1;
         end
     end
@@ -78,7 +85,7 @@ always @(posedge MAX10_CLK1_50) begin
             VGA_HS = 1'b0;
         end
         else if (hsync_counter == 1039) begin
-            hsync_counter = 0;
+            
             vsync_counter = vsync_counter + 1;
         end
     end
@@ -103,7 +110,6 @@ always @(posedge MAX10_CLK1_50) begin
             VGA_HS = 1'b0;
         end
         else if (hsync_counter == 1039) begin
-            hsync_counter = 0;
             vsync_counter = vsync_counter + 1;
         end
     end
@@ -137,7 +143,7 @@ always @(posedge MAX10_CLK1_50) begin
             VGA_B = 4'b0000;
         end
         else if (hsync_counter == 1039) begin
-            hsync_counter = 0;
+            
             vsync_counter = vsync_counter + 1;
         end
 
