@@ -23,6 +23,13 @@ reg [9:0] vsync_counter;
 initial begin 
 	hsync_counter <= 11'b00000000000;
 	vsync_counter <= 10'b0000000000;
+
+    VGA_R = 4'b0000;
+    VGA_G = 4'b0000;
+    VGA_B = 4'b0000;
+
+    VGA_VS = 1'b0;
+    VGA_HS = 1'b0;
 end
 
 always @(negedge MAX10_CLK1_50) begin
@@ -89,7 +96,7 @@ always @(posedge MAX10_CLK1_50) begin
     end
 
     // vsync back porch of 23 lines
-    if ((vsync_counter >= 43) && (vsync_counter <= 65)) begin
+    else if ((vsync_counter >= 43) && (vsync_counter <= 65)) begin
         VGA_VS = 1'b0;
         VGA_R = 4'b0000;
         VGA_G = 4'b0000;
