@@ -22,7 +22,7 @@ vga_test uut(
 
 // clock has 20ns period. so we change state every 10ns.
 initial begin
-    clk = 1'b0;
+    clk = 1'b1;
     forever #10 clk = ~clk;
 end
 
