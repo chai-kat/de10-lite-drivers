@@ -26,9 +26,9 @@ initial begin
     forever #10 clk = ~clk;
 end
 
-// after 13852800ns we should be done
+// after 13,852,800ns we should be done
 always begin
-    #13852800 $finish;
+    #13852800 $stop;
 end
 
 endmodule
