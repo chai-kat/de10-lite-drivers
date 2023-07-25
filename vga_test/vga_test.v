@@ -30,23 +30,23 @@ end
 always @(posedge MAX10_CLK1_50) begin
 
     // vsync front porch of 37 lines
-    if ((vsync_counter >= 0) || (vsync_counter <= 36)) begin
-        VGA_VS = 0'b0;
+    if ((vsync_counter >= 0) && (vsync_counter <= 36)) begin
+        VGA_VS = 1'b0;
         VGA_R = 4'bxxxx;
         VGA_G = 4'bxxxx;
         VGA_B = 4'bxxxx;
 
         // hsync front porch of 56 pixels
-        if ((hsync_counter >= 0) || (hsync_counter <= 55)) begin
-            VGA_HS = 0'b0;
+        if ((hsync_counter >= 0) && (hsync_counter <= 55)) begin
+            VGA_HS = 1'b0;
         end
         // hsync pulse of 120 pixels
-        else if ((hsync_counter >= 56) || (hsync_counter <= 175)) begin
+        else if ((hsync_counter >= 56) && (hsync_counter <= 175)) begin
             VGA_HS = 1'b1;
         end
         // hsync back porch of 64 pixels
-        else if ((hsync_counter >= 176) || (hsync_counter <= 239)) begin
-            VGA_HS = 0'b0;
+        else if ((hsync_counter >= 176) && (hsync_counter <= 239)) begin
+            VGA_HS = 1'b0;
         end
         else if (hsync_counter == 1039) begin
             hsync_counter = 0;
@@ -55,23 +55,23 @@ always @(posedge MAX10_CLK1_50) begin
     end
 
     // vsync pulse of 6 lines
-    else if ((vsync_counter >= 37) || (vsync_counter <= 42)) begin
-        VGA_VS = 0'b1;
+    else if ((vsync_counter >= 37) && (vsync_counter <= 42)) begin
+        VGA_VS = 1'b1;
         VGA_R = 4'bxxxx;
         VGA_G = 4'bxxxx;
         VGA_B = 4'bxxxx;
 
         // hsync front porch of 56 pixels
-        if ((hsync_counter >= 0) || (hsync_counter <= 55)) begin
-            VGA_HS = 0'b0;
+        if ((hsync_counter >= 0) && (hsync_counter <= 55)) begin
+            VGA_HS = 1'b0;
         end
         // hsync pulse of 120 pixels
-        else if ((hsync_counter >= 56) || (hsync_counter <= 175)) begin
+        else if ((hsync_counter >= 56) && (hsync_counter <= 175)) begin
             VGA_HS = 1'b1;
         end
         // hsync back porch of 64 pixels
-        else if ((hsync_counter >= 176) || (hsync_counter <= 239)) begin
-            VGA_HS = 0'b0;
+        else if ((hsync_counter >= 176) && (hsync_counter <= 239)) begin
+            VGA_HS = 1'b0;
         end
         else if (hsync_counter == 1039) begin
             hsync_counter = 0;
@@ -80,23 +80,23 @@ always @(posedge MAX10_CLK1_50) begin
     end
 
     // vsync back porch of 23 lines
-    if ((vsync_counter >= 43) || (vsync_counter <= 65)) begin
-        VGA_VS = 0'b0;
+    if ((vsync_counter >= 43) && (vsync_counter <= 65)) begin
+        VGA_VS = 1'b0;
         VGA_R = 4'bxxxx;
         VGA_G = 4'bxxxx;
         VGA_B = 4'bxxxx;
 
         // hsync front porch of 56 pixels
-        if ((hsync_counter >= 0) || (hsync_counter <= 55)) begin
-            VGA_HS = 0'b0;
+        if ((hsync_counter >= 0) && (hsync_counter <= 55)) begin
+            VGA_HS = 1'b0;
         end
         // hsync pulse of 120 pixels
-        else if ((hsync_counter >= 56) || (hsync_counter <= 175)) begin
+        else if ((hsync_counter >= 56) && (hsync_counter <= 175)) begin
             VGA_HS = 1'b1;
         end
         // hsync back porch of 64 pixels
-        else if ((hsync_counter >= 176) || (hsync_counter <= 239)) begin
-            VGA_HS = 0'b0;
+        else if ((hsync_counter >= 176) && (hsync_counter <= 239)) begin
+            VGA_HS = 1'b0;
         end
         else if (hsync_counter == 1039) begin
             hsync_counter = 0;
@@ -112,22 +112,22 @@ always @(posedge MAX10_CLK1_50) begin
     // display portion of frame
     else begin
         // front porch of 56 pixels
-        if ((hsync_counter >= 0) || (hsync_counter <= 55)) begin
-            VGA_HS = 0'b0;
+        if ((hsync_counter >= 0) && (hsync_counter <= 55)) begin
+            VGA_HS = 1'b0;
             VGA_R = 4'bxxxx;
             VGA_G = 4'bxxxx;
             VGA_B = 4'bxxxx;
         end
         // hsync pulse of 120 pixels
-        else if ((hsync_counter >= 56) || (hsync_counter <= 175)) begin
+        else if ((hsync_counter >= 56) && (hsync_counter <= 175)) begin
             VGA_HS = 1'b1;
             VGA_R = 4'bxxxx;
             VGA_G = 4'bxxxx;
             VGA_B = 4'bxxxx;
         end
         // back porch of 64 pixels
-        else if ((hsync_counter >= 176) || (hsync_counter <= 239)) begin
-            VGA_HS = 0'b0;
+        else if ((hsync_counter >= 176) && (hsync_counter <= 239)) begin
+            VGA_HS = 1'b0;
             VGA_R = 4'bxxxx;
             VGA_G = 4'bxxxx;
             VGA_B = 4'bxxxx;
@@ -139,7 +139,7 @@ always @(posedge MAX10_CLK1_50) begin
 
         //video of 800 pixels
         else begin 
-            VGA_HS = 0'b0;
+            VGA_HS = 1'b0;
             VGA_R = 4'b1111;
             VGA_G = 4'b0000;
             VGA_B = 4'b0000;
