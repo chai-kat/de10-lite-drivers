@@ -1,4 +1,4 @@
-`timescale 1ps/1ps
+`timescale 1ns/1ns
 
 module vga_test_tb(
 
@@ -20,12 +20,15 @@ vga_test uut(
     .VGA_VS(VS)
 );
 
+// clock has 20ns period. so we change state every 10ns.
 initial begin
     clk = 1'b0;
+    forever #10 clk = ~clk;
 end
 
+// after 13852800ns we should be done
 always begin
-   #10 clk = ~clk;
+    #13852800 $finish;
 end
 
 endmodule
