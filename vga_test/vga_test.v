@@ -27,7 +27,7 @@ end
 
 always @(negedge MAX10_CLK1_50) begin
     // hsync counter (pixel count) can go up to 1039, and then needs to reset to 0
-    if (hsync_counter <= 1039) begin
+    if (hsync_counter < 1039) begin
         hsync_counter = hsync_counter + 1;
     end
     else begin
@@ -60,7 +60,6 @@ always @(posedge MAX10_CLK1_50) begin
             VGA_HS = 1'b0;
         end
         else if (hsync_counter == 1039) begin
-            
             vsync_counter = vsync_counter + 1;
         end
     end
@@ -85,7 +84,6 @@ always @(posedge MAX10_CLK1_50) begin
             VGA_HS = 1'b0;
         end
         else if (hsync_counter == 1039) begin
-            
             vsync_counter = vsync_counter + 1;
         end
     end
