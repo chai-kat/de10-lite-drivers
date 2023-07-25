@@ -25,6 +25,10 @@ initial begin
 	vsync_counter <= 10'b0000000000;
 end
 
+always @(negedge MAX10_CLK1_50) begin
+    hsync_counter = hsync_counter + 1;
+end
+
 // TODO: the <= is combinatorial, right? 
 // TODO: consider if it will infer a latch. If yes, change to '='
 always @(posedge MAX10_CLK1_50) begin
@@ -145,8 +149,6 @@ always @(posedge MAX10_CLK1_50) begin
             VGA_B = 4'b0000;
         end
     end
-
-	hsync_counter = hsync_counter + 1;
 end
 
 endmodule
