@@ -10,6 +10,7 @@ wire [3:0] G;
 wire [3:0] R;
 wire HS;
 wire VS;
+wire [9:0] LEDR;
 
 vga_test uut(
     .MAX10_CLK1_50(clk),
@@ -18,6 +19,7 @@ vga_test uut(
     .VGA_G(G),
     .VGA_HS(HS),
     .VGA_VS(VS)
+    .LEDR(LEDR)
 );
 
 // clock has 20ns period. so we change state every 10ns.
