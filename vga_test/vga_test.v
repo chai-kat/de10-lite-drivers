@@ -25,7 +25,7 @@ initial begin
 	hsync_counter = 11'b00000000000;
 	vsync_counter = 10'b0000000000;
 
-    LEDR <= vsync_counter;
+    LEDR[9:0] <= vsync_counter[9:0];
 
     VGA_R = 4'b0000;
     VGA_G = 4'b0000;
