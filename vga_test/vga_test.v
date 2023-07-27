@@ -11,7 +11,8 @@ module vga_test(
     output reg [3:0] VGA_R,
     output reg [3:0] VGA_G,
     output reg VGA_HS,
-    output reg VGA_VS 
+    output reg VGA_VS,
+    output [9:0]LEDR 
 );
 
 // there are 1040 pixels in a line, so we keep track of where we are
@@ -21,8 +22,10 @@ reg [10:0] hsync_counter;
 reg [9:0] vsync_counter;
 
 initial begin 
-	hsync_counter <= 11'b00000000000;
-	vsync_counter <= 10'b0000000000;
+	hsync_counter = 11'b00000000000;
+	vsync_counter = 10'b0000000000;
+
+    LEDR <= vsync_counter;
 
     VGA_R = 4'b0000;
     VGA_G = 4'b0000;
@@ -148,7 +151,6 @@ always @(posedge MAX10_CLK1_50) begin
             VGA_B = 4'b0000;
         end
         else if (hsync_counter == 1039) begin
-            
             vsync_counter = vsync_counter + 1;
         end
 
