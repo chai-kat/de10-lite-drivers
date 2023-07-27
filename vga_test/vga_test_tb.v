@@ -18,7 +18,7 @@ vga_test uut(
     .VGA_R(R),
     .VGA_G(G),
     .VGA_HS(HS),
-    .VGA_VS(VS)
+    .VGA_VS(VS),
     .LEDR(LEDR)
 );
 
