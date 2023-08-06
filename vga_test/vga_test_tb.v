@@ -13,20 +13,20 @@ wire VS;
 wire [9:0] LEDR;
 
 vga_test #(
-    H_VISIBLE_AREA = 800,
-    H_FRONT_PORCH = 40,
-    H_SYNC_PULSE = 128,
-    H_BACK_PORCH = 88,
+    .H_VISIBLE_AREA(800),
+    .H_FRONT_PORCH(40),
+    .H_SYNC_PULSE(128),
+    .H_BACK_PORCH(88),
 
-    V_VISIBLE_AREA = 600,
-    V_FRONT_PORCH = 1,
-    V_SYNC_PULSE = 4,
-    V_BACK_PORCH = 23,
+    .V_VISIBLE_AREA(600),
+    .V_FRONT_PORCH(1),
+    .V_SYNC_PULSE(4),
+    .V_BACK_PORCH(23),
 
     // 0 for positive HSYNC pulse (i.e starts low goes high)
     // 1 for negative HSYNC pulse (i.e. starts high goes low)
-    HSYNC_POLARITY = 1'b0,
-    VSYNC_POLARITY = 1'b0
+    .HSYNC_POLARITY(1'b0),
+    .VSYNC_POLARITY(1'b0)
 )
 
 uut(
