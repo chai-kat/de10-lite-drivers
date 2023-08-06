@@ -1,4 +1,4 @@
-`timescale 1ns/1ns
+`timescale 1ns/100ps
 
 // VGA module for the DE10-Lite board
 // outputs red to 800x600 VGA with HSync and VSync
