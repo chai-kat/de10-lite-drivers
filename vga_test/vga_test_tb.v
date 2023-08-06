@@ -27,7 +27,7 @@ vga_test #(
     // 1 for negative HSYNC pulse (i.e. starts high goes low)
     HSYNC_POLARITY = 1'b0,
     VSYNC_POLARITY = 1'b0
-)
+);
 
 uut(
     .VGA_CLK(clk),
