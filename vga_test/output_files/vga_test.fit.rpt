@@ -1,5 +1,5 @@
 Fitter report for vga_test
-Thu Jul 27 14:23:23 2023
+Mon Aug  7 01:10:28 2023
 Quartus Prime Version 22.1std.1 Build 917 02/14/2023 SC Lite Edition
 
 
@@ -63,7 +63,7 @@ https://fpgasoftware.intel.com/eula.
 +-------------------------------------------------------------------------------------+
 ; Fitter Summary                                                                      ;
 +------------------------------------+------------------------------------------------+
-; Fitter Status                      ; Successful - Thu Jul 27 14:23:23 2023          ;
+; Fitter Status                      ; Successful - Mon Aug  7 01:10:28 2023          ;
 ; Quartus Prime Version              ; 22.1std.1 Build 917 02/14/2023 SC Lite Edition ;
 ; Revision Name                      ; vga_test                                       ;
 ; Top-level Entity Name              ; DE10_LITE_Golden_Top                           ;
@@ -2105,10 +2105,10 @@ Warning (169064): Following 71 pins have no output enable or a GND or VCC output
     Info (169065): Pin GPIO[35] has a permanently disabled output enable File: /home/chaitanya/Documents/QuartusProjects/de10-lite-drivers/vga_test/DE10_LITE_Golden_Top.v Line: 122
 Info (144001): Generated suppressed messages file /home/chaitanya/Documents/QuartusProjects/de10-lite-drivers/vga_test/output_files/vga_test.fit.smsg
 Info: Quartus Prime Fitter was successful. 0 errors, 9 warnings
-    Info: Peak virtual memory: 2035 megabytes
-    Info: Processing ended: Thu Jul 27 14:23:24 2023
-    Info: Elapsed time: 00:00:17
-    Info: Total CPU time (on all processors): 00:00:23
+    Info: Peak virtual memory: 2039 megabytes
+    Info: Processing ended: Mon Aug  7 01:10:29 2023
+    Info: Elapsed time: 00:00:20
+    Info: Total CPU time (on all processors): 00:00:24
 
 
 +----------------------------+

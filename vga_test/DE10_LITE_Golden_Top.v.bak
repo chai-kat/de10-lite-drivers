@@ -132,42 +132,6 @@ module DE10_LITE_Golden_Top(
 //  Structural coding
 //=======================================================
 
-wire vga_clk;
-wire reset_n;
 
-assign reset_n = KEY[0];
-
-VGA_CLK_40 VGA_CLK1_40 (
-	.areset(reset_n),
-	.inclk0 (MAX10_CLK1_50),
-	.c0 (vga_clk)
-);
-
-vga_test #(
-    .H_VISIBLE_AREA(800),
-    .H_FRONT_PORCH(40),
-    .H_SYNC_PULSE(128),
-    .H_BACK_PORCH(88),
-
-    .V_VISIBLE_AREA(600),
-    .V_FRONT_PORCH(1),
-    .V_SYNC_PULSE(4),
-    .V_BACK_PORCH(23),
-
-    // 1 for positive HSYNC pulse (i.e starts low goes high)
-    // 0 for negative HSYNC pulse (i.e. starts high goes low)
-    .HSYNC_POLARITY(1'b1),
-    .VSYNC_POLARITY(1'b1)
-)
-
-vga_handler (
-    .VGA_CLK(vga_clk),
-    .VGA_B(VGA_B),
-    .VGA_R(VGA_R),
-    .VGA_G(VGA_G),
-    .VGA_HS(VGA_HS),
-    .VGA_VS(VGA_VS),
-    .LEDR(LEDR)
-);
 
 endmodule
