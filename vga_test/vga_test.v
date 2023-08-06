@@ -103,6 +103,7 @@ always @(posedge VGA_CLK) begin
                 VGA_VS = ~VSYNC_POLARITY;
             end
 
+            hsync_counter = 0;
             vsync_counter = vsync_counter + 1;
         end
         else begin 
@@ -130,6 +131,7 @@ always @(posedge VGA_CLK) begin
         end
         // hsync_counter changes on the positive edge, so we need to change at WHOLE_LINE not WHOLE_LINE -1
         else if (hsync_counter == WHOLE_LINE) begin
+            hsync_counter = 0;
             vsync_counter = vsync_counter + 1;
 
             // need to do the switching here or it happens too late
@@ -165,6 +167,7 @@ always @(posedge VGA_CLK) begin
         end
         // hsync_counter changes on the positive edge, so we need to change at WHOLE_LINE not WHOLE_LINE -1
         else if (hsync_counter == WHOLE_LINE) begin
+            hsync_counter = 0;
             vsync_counter = vsync_counter + 1;
         end
         else begin 
@@ -204,6 +207,7 @@ always @(posedge VGA_CLK) begin
         end
         // hsync_counter changes on the positive edge, so we need to change at WHOLE_LINE not WHOLE_LINE -1
         else if (hsync_counter == WHOLE_LINE) begin
+            hsync_counter = 0;
             vsync_counter = vsync_counter + 1;
         end
 
