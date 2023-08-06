@@ -74,7 +74,7 @@ end
 // TODO: consider if it will infer a latch. If yes, change to '='
 always @(posedge VGA_CLK) begin
 
-    // vsync front porch of e.g 37 lines, parameter given as 37, so we do < V_FRONT_PORCH, not <=
+    // vsync front porch of e.g 1 lines, parameter given as 1, so we do < V_FRONT_PORCH, not <=
     if ((vsync_counter >= 0) && (vsync_counter < V_FRONT_PORCH)) begin
         VGA_VS = ~VSYNC_POLARITY; // if polarity of vsync is positive then this is 1'b0. else 1'b1.
         VGA_R = 4'b0000;
@@ -111,7 +111,7 @@ always @(posedge VGA_CLK) begin
         end
     end
 
-    // vsync pulse of 6 lines
+    // vsync pulse of 4 lines
     else if ((vsync_counter >= V_FRONT_PORCH) && (vsync_counter < V_FRONT_PORCH + V_SYNC_PULSE)) begin
         VGA_VS = VSYNC_POLARITY;
         VGA_R = 4'b0000;
@@ -131,9 +131,6 @@ always @(posedge VGA_CLK) begin
         end
         // hsync_counter changes on the positive edge, so we need to change at WHOLE_LINE not WHOLE_LINE -1
         else if (hsync_counter == WHOLE_LINE) begin
-            hsync_counter = 0;
-            vsync_counter = vsync_counter + 1;
-
             // need to do the switching here or it happens too late
             if (vsync_counter == V_FRONT_PORCH + V_SYNC_PULSE - 1) begin
                 VGA_VS = ~VSYNC_POLARITY;
@@ -141,6 +138,9 @@ always @(posedge VGA_CLK) begin
             else begin
                 VGA_VS = VSYNC_POLARITY;
             end
+
+            hsync_counter = 0;
+            vsync_counter = vsync_counter + 1;
         end
         else begin 
             VGA_HS = ~HSYNC_POLARITY;
