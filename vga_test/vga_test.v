@@ -94,6 +94,15 @@ always @(posedge VGA_CLK) begin
         end
         // hsync_counter changes on the positive edge, so we need to change at WHOLE_LINE not WHOLE_LINE -1
         else if (hsync_counter == WHOLE_LINE) begin
+
+            // need to do the switching here or it happens too late
+            if (vsync_counter == V_FRONT_PORCH - 1) begin
+                VGA_VS = VSYNC_POLARITY;
+            end
+            else begin
+                VGA_VS = ~VSYNC_POLARITY;
+            end
+
             vsync_counter = vsync_counter + 1;
         end
         else begin 
@@ -122,6 +131,14 @@ always @(posedge VGA_CLK) begin
         // hsync_counter changes on the positive edge, so we need to change at WHOLE_LINE not WHOLE_LINE -1
         else if (hsync_counter == WHOLE_LINE) begin
             vsync_counter = vsync_counter + 1;
+
+            // need to do the switching here or it happens too late
+            if (vsync_counter == V_FRONT_PORCH + V_SYNC_PULSE - 1) begin
+                VGA_VS = ~VSYNC_POLARITY;
+            end
+            else begin
+                VGA_VS = VSYNC_POLARITY;
+            end
         end
         else begin 
             VGA_HS = ~HSYNC_POLARITY;
@@ -155,8 +172,10 @@ always @(posedge VGA_CLK) begin
         end
     end
 
-    // reset vsync_counter to 0 when we reach the end of the frame
+    // reset hsync_counter and vsync_counter to 0 when we reach the end of the frame
+    // TODO: double check that this doesn't cause latching
     else if (vsync_counter == WHOLE_FRAME - 1) begin
+        hsync_counter = 0;
         vsync_counter = 0;
     end
 
