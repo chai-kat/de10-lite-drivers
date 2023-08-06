@@ -6,24 +6,24 @@
 
 // first 3 are inputs from the framebuffer
 module vga_test # (
-    parameter H_VISIBLE_AREA,
-    parameter H_FRONT_PORCH,
-    parameter H_SYNC_PULSE,
-    parameter H_BACK_PORCH,
+    parameter H_VISIBLE_AREA = 800,
+    parameter H_FRONT_PORCH = 56,
+    parameter H_SYNC_PULSE = 120,
+    parameter H_BACK_PORCH = 64,
     localparam WHOLE_LINE = H_VISIBLE_AREA + H_FRONT_PORCH + H_SYNC_PULSE + H_BACK_PORCH,
     localparam CLOG2_WHOLE_LINE = $clog2(WHOLE_LINE),
 
-    parameter V_VISIBLE_AREA,
-    parameter V_FRONT_PORCH,
-    parameter V_SYNC_PULSE,
-    parameter V_BACK_PORCH,
+    parameter V_VISIBLE_AREA = 600,
+    parameter V_FRONT_PORCH = 37,
+    parameter V_SYNC_PULSE = 6,
+    parameter V_BACK_PORCH = 23,
     localparam WHOLE_FRAME = V_VISIBLE_AREA + V_FRONT_PORCH + V_SYNC_PULSE + V_BACK_PORCH,
     localparam CLOG2_WHOLE_FRAME = $clog2(WHOLE_FRAME),
 
     // 0 for positive HSYNC pulse (i.e starts low goes high)
     // 1 for negative HSYNC pulse (i.e. starts high goes low)
-    parameter HSYNC_POLARITY,
-    parameter VSYNC_POLARITY
+    parameter HSYNC_POLARITY = 1'b0,
+    parameter VSYNC_POLARITY = 1'b0
 )
 (
     input VGA_CLK,
