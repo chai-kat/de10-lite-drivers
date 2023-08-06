@@ -23,10 +23,10 @@ vga_test #(
     .V_SYNC_PULSE(4),
     .V_BACK_PORCH(23),
 
-    // 0 for positive HSYNC pulse (i.e starts low goes high)
-    // 1 for negative HSYNC pulse (i.e. starts high goes low)
-    .HSYNC_POLARITY(1'b0),
-    .VSYNC_POLARITY(1'b0)
+    // 1 for positive HSYNC pulse (i.e starts low goes high)
+    // 0 for negative HSYNC pulse (i.e. starts high goes low)
+    .HSYNC_POLARITY(1'b1),
+    .VSYNC_POLARITY(1'b1)
 )
 
 uut(

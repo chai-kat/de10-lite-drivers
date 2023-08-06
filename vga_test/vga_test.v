@@ -24,8 +24,8 @@ module vga_test # (
     parameter WHOLE_FRAME = V_VISIBLE_AREA + V_FRONT_PORCH + V_SYNC_PULSE + V_BACK_PORCH,
     parameter CLOG2_WHOLE_FRAME = $clog2(WHOLE_FRAME),
 
-    // 0 for positive HSYNC pulse (i.e starts low goes high)
-    // 1 for negative HSYNC pulse (i.e. starts high goes low)
+    // 1 for positive HSYNC pulse (i.e starts low goes high)
+    // 0 for negative HSYNC pulse (i.e. starts high goes low)
     parameter HSYNC_POLARITY = 1'b0,
     parameter VSYNC_POLARITY = 1'b0
 )
@@ -92,7 +92,8 @@ always @(posedge VGA_CLK) begin
         else if ((hsync_counter >= H_FRONT_PORCH + H_SYNC_PULSE) && (hsync_counter < H_FRONT_PORCH + H_SYNC_PULSE + H_BACK_PORCH)) begin
             VGA_HS = ~HSYNC_POLARITY; // if polarity of hsync is positive then this is 1'b0. else 1'b1.
         end
-        else if (hsync_counter == WHOLE_LINE - 1) begin
+        // hsync_counter changes on the positive edge, so we need to change at WHOLE_LINE not WHOLE_LINE -1
+        else if (hsync_counter == WHOLE_LINE) begin
             vsync_counter = vsync_counter + 1;
         end
         else begin 
@@ -118,7 +119,8 @@ always @(posedge VGA_CLK) begin
         else if ((hsync_counter >= H_FRONT_PORCH + H_SYNC_PULSE) && (hsync_counter <= H_FRONT_PORCH + H_SYNC_PULSE + H_BACK_PORCH)) begin
             VGA_HS = ~HSYNC_POLARITY; // if polarity of hsync is positive then this is 1'b0. else 1'b1.
         end
-        else if (hsync_counter == WHOLE_LINE - 1) begin
+        // hsync_counter changes on the positive edge, so we need to change at WHOLE_LINE not WHOLE_LINE -1
+        else if (hsync_counter == WHOLE_LINE) begin
             vsync_counter = vsync_counter + 1;
         end
         else begin 
@@ -144,7 +146,8 @@ always @(posedge VGA_CLK) begin
         else if ((hsync_counter >= H_FRONT_PORCH + H_SYNC_PULSE) && (hsync_counter < H_FRONT_PORCH + H_SYNC_PULSE + H_BACK_PORCH)) begin
             VGA_HS = ~HSYNC_POLARITY; // if polarity of hsync is positive then this is 1'b0. else 1'b1.
         end
-        else if (hsync_counter == WHOLE_LINE - 1) begin
+        // hsync_counter changes on the positive edge, so we need to change at WHOLE_LINE not WHOLE_LINE -1
+        else if (hsync_counter == WHOLE_LINE) begin
             vsync_counter = vsync_counter + 1;
         end
         else begin 
@@ -180,7 +183,8 @@ always @(posedge VGA_CLK) begin
             VGA_G = 4'b0000;
             VGA_B = 4'b0000;
         end
-        else if (hsync_counter == WHOLE_LINE - 1) begin
+        // hsync_counter changes on the positive edge, so we need to change at WHOLE_LINE not WHOLE_LINE -1
+        else if (hsync_counter == WHOLE_LINE) begin
             vsync_counter = vsync_counter + 1;
         end
 
