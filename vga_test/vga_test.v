@@ -10,15 +10,19 @@ module vga_test # (
     parameter H_FRONT_PORCH = 56,
     parameter H_SYNC_PULSE = 120,
     parameter H_BACK_PORCH = 64,
-    localparam WHOLE_LINE = H_VISIBLE_AREA + H_FRONT_PORCH + H_SYNC_PULSE + H_BACK_PORCH,
-    localparam CLOG2_WHOLE_LINE = $clog2(WHOLE_LINE),
+    
+    // calculated parameters
+    parameter WHOLE_LINE = H_VISIBLE_AREA + H_FRONT_PORCH + H_SYNC_PULSE + H_BACK_PORCH,
+    parameter CLOG2_WHOLE_LINE = $clog2(WHOLE_LINE),
 
     parameter V_VISIBLE_AREA = 600,
     parameter V_FRONT_PORCH = 37,
     parameter V_SYNC_PULSE = 6,
     parameter V_BACK_PORCH = 23,
-    localparam WHOLE_FRAME = V_VISIBLE_AREA + V_FRONT_PORCH + V_SYNC_PULSE + V_BACK_PORCH,
-    localparam CLOG2_WHOLE_FRAME = $clog2(WHOLE_FRAME),
+    
+    // calculated parameters
+    parameter WHOLE_FRAME = V_VISIBLE_AREA + V_FRONT_PORCH + V_SYNC_PULSE + V_BACK_PORCH,
+    parameter CLOG2_WHOLE_FRAME = $clog2(WHOLE_FRAME),
 
     // 0 for positive HSYNC pulse (i.e starts low goes high)
     // 1 for negative HSYNC pulse (i.e. starts high goes low)
