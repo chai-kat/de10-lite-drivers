@@ -5,7 +5,7 @@
 // for this one, HSYNC and VSYNC are both POSITIVE
 
 // first 3 are inputs from the framebuffer
-module vga_test # (
+module vga_driver # (
     parameter H_VISIBLE_AREA = 800,
     parameter H_FRONT_PORCH = 56,
     parameter H_SYNC_PULSE = 120,
@@ -198,8 +198,7 @@ always @(posedge vga_clk) begin
             VGA_G = 4'b0000;
             VGA_B = 4'b0000;
         end
-
     end
-    // no else cause it should never escape these states
-
 end
+
+endmodule
