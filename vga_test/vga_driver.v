@@ -59,7 +59,7 @@ end
 
 assign LEDR[9:0] = line_counter[9:0];
 
-always @(posedge vga_clk) begin
+always @(posedge VGA_CLK) begin
     if ((line_counter >= 0) && (line_counter < V_FRONT_PORCH)) begin
         VGA_VS = ~VSYNC_POLARITY;
         line_counter <= line_counter + 1;
