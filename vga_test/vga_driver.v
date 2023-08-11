@@ -62,7 +62,6 @@ assign LEDR[9:0] = line_counter[9:0];
 always @(posedge VGA_CLK) begin
     if ((line_counter >= 0) && (line_counter < V_FRONT_PORCH)) begin
         VGA_VS = ~VSYNC_POLARITY;
-        line_counter <= line_counter + 1;
 
         VGA_R = 4'b0000;
         VGA_G = 4'b0000;
@@ -87,6 +86,7 @@ always @(posedge VGA_CLK) begin
             // if last pixel then reset pixel counter to 0 here. else pixel_counter <= pixel_counter + 1;
             if (pixel_counter == (H_FRONT_PORCH + H_SYNC_PULSE + H_BACK_PORCH + H_VISIBLE_AREA - 1)) begin
                 pixel_counter <= 0;
+                line_counter <= line_counter + 1;
             end else begin
                 pixel_counter <= pixel_counter + 1;
             end
@@ -94,7 +94,6 @@ always @(posedge VGA_CLK) begin
 
     end else if ((line_counter >= V_FRONT_PORCH) && (line_counter < (V_FRONT_PORCH + V_SYNC_PULSE))) begin
         VGA_VS = VSYNC_POLARITY;
-        line_counter <= line_counter + 1;
 
         VGA_R = 4'b0000;
         VGA_G = 4'b0000;
@@ -117,6 +116,7 @@ always @(posedge VGA_CLK) begin
             // if last pixel then reset pixel counter to 0 here. else pixel_counter <= pixel_counter + 1;
             if (pixel_counter == (H_FRONT_PORCH + H_SYNC_PULSE + H_BACK_PORCH + H_VISIBLE_AREA - 1)) begin
                 pixel_counter <= 0;
+                line_counter <= line_counter + 1;
             end else begin
                 pixel_counter <= pixel_counter + 1;
             end
@@ -124,7 +124,6 @@ always @(posedge VGA_CLK) begin
 
     end else if ((line_counter >= (V_FRONT_PORCH + V_SYNC_PULSE)) && (line_counter < (V_FRONT_PORCH + V_SYNC_PULSE + V_BACK_PORCH))) begin
         VGA_VS = ~VSYNC_POLARITY;
-        line_counter <= line_counter + 1;
 
         VGA_R = 4'b0000;
         VGA_G = 4'b0000;
@@ -147,6 +146,7 @@ always @(posedge VGA_CLK) begin
             // if last pixel then reset pixel counter to 0 here. else pixel_counter <= pixel_counter + 1;
             if (pixel_counter == (H_FRONT_PORCH + H_SYNC_PULSE + H_BACK_PORCH + H_VISIBLE_AREA - 1)) begin
                 pixel_counter <= 0;
+                line_counter <= line_counter + 1;
             end else begin
                 pixel_counter <= pixel_counter + 1;
             end
@@ -154,12 +154,6 @@ always @(posedge VGA_CLK) begin
 
     end else if ((line_counter >= (V_FRONT_PORCH + V_SYNC_PULSE + V_BACK_PORCH)) && (line_counter < (V_FRONT_PORCH + V_SYNC_PULSE + V_BACK_PORCH+ V_VISIBLE_AREA))) begin
         VGA_VS = ~VSYNC_POLARITY;
-        // if last line then reset line counter to 0 here. else line_counter <= line_counter + 1;
-        if (line_counter == (V_FRONT_PORCH + V_SYNC_PULSE + V_BACK_PORCH + V_VISIBLE_AREA - 1)) begin
-            line_counter <= 0;
-        end else begin
-            line_counter <= line_counter + 1;
-        end
 
         if ((pixel_counter >= 0) && (pixel_counter < H_FRONT_PORCH)) begin
             VGA_HS = ~HSYNC_POLARITY;
@@ -190,6 +184,12 @@ always @(posedge VGA_CLK) begin
             // if last pixel then reset pixel counter to 0 here. else pixel_counter <= pixel_counter + 1;
             if (pixel_counter == (H_FRONT_PORCH + H_SYNC_PULSE + H_BACK_PORCH + H_VISIBLE_AREA - 1)) begin
                 pixel_counter <= 0;
+                // if last line then reset line counter to 0 here. else line_counter <= line_counter + 1;
+                if (line_counter == (V_FRONT_PORCH + V_SYNC_PULSE + V_BACK_PORCH + V_VISIBLE_AREA - 1)) begin
+                    line_counter <= 0;
+                end else begin
+                    line_counter <= line_counter + 1;
+                end
             end else begin
                 pixel_counter <= pixel_counter + 1;
             end
