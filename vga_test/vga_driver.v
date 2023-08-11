@@ -31,7 +31,7 @@ module vga_driver # (
 )
 (
     input VGA_CLK,
-    input reg [11:0] VGA_COLOR,
+    input [11:0] VGA_COLOR,
     output reg [3:0] VGA_B,
     output reg [3:0] VGA_R,
     output reg [3:0] VGA_G,
