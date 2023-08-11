@@ -133,12 +133,8 @@ module DE10_LITE_Golden_Top(
 //=======================================================
 
 wire vga_clk;
-wire reset_n;
 
-assign reset_n = KEY[0];
-
-VGA_CLK_40 VGA_CLK1_40 (
-	.areset(reset_n),
+pll0 VGA_CLK1_40 (
 	.inclk0 (MAX10_CLK1_50),
 	.c0 (vga_clk)
 );
