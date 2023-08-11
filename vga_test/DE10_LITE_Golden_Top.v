@@ -143,7 +143,7 @@ VGA_CLK_40 VGA_CLK1_40 (
 	.c0 (vga_clk)
 );
 
-vga_test #(
+vga_driver #(
     .H_VISIBLE_AREA(800),
     .H_FRONT_PORCH(40),
     .H_SYNC_PULSE(128),
