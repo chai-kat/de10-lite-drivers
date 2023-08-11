@@ -127,6 +127,9 @@ module DE10_LITE_Golden_Top(
 //  REG/WIRE declarations
 //=======================================================
 
+wire [11:0] vga_color_selector;
+assign vga_color_selector = {SW[9:0], 2'b00};
+
 
 //=======================================================
 //  Structural coding
@@ -158,6 +161,7 @@ vga_driver #(
 
 vga_handler (
     .VGA_CLK(vga_clk),
+	.VGA_COLOR(vga_color_selector),
     .VGA_B(VGA_B),
     .VGA_R(VGA_R),
     .VGA_G(VGA_G),

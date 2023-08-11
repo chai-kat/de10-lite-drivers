@@ -31,6 +31,7 @@ module vga_driver # (
 )
 (
     input VGA_CLK,
+    input reg [11:0] VGA_COLOR,
     output reg [3:0] VGA_B,
     output reg [3:0] VGA_R,
     output reg [3:0] VGA_G,
@@ -194,9 +195,10 @@ always @(posedge VGA_CLK) begin
                 pixel_counter <= pixel_counter + 1;
             end
 
-            VGA_R = 4'b1111;
-            VGA_G = 4'b0000;
-            VGA_B = 4'b0000;
+            // set pixel color
+            VGA_R = VGA_COLOR[11:8]; // e.g. 4'b1111 for full red
+            VGA_G = VGA_COLOR[7:4]; // e.g. 4'b1111 for full green
+            VGA_B = VGA_COLOR[3:0]; // e.g. 4'b1111 for full blue
         end
     end
 end
