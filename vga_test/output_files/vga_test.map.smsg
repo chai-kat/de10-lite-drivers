@@ -1,1 +1,1 @@
-Warning (10268): Verilog HDL information at vga_driver.v(62): always construct contains both blocking and non-blocking assignments File: /home/chaitanya/Documents/QuartusProjects/de10-lite-drivers/vga_test/vga_driver.v Line: 62
+Warning (10268): Verilog HDL information at vga_driver.v(63): always construct contains both blocking and non-blocking assignments File: /home/chaitanya/Documents/QuartusProjects/de10-lite-drivers/vga_test/vga_driver.v Line: 63

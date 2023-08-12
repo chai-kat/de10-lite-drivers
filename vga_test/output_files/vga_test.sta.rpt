@@ -1,5 +1,5 @@
 Timing Analyzer report for vga_test
-Fri Aug 11 22:49:35 2023
+Fri Aug 11 23:19:44 2023
 Quartus Prime Version 22.1std.1 Build 917 02/14/2023 SC Lite Edition
 
 
@@ -42,9 +42,11 @@ Quartus Prime Version 22.1std.1 Build 917 02/14/2023 SC Lite Edition
  34. Report RSKM
  35. Unconstrained Paths Summary
  36. Clock Status Summary
- 37. Unconstrained Output Ports
+ 37. Unconstrained Input Ports
  38. Unconstrained Output Ports
- 39. Timing Analyzer Messages
+ 39. Unconstrained Input Ports
+ 40. Unconstrained Output Ports
+ 41. Timing Analyzer Messages
 
 
 
@@ -90,13 +92,13 @@ https://fpgasoftware.intel.com/eula.
 ; Number detected on machine ; 16          ;
 ; Maximum allowed            ; 16          ;
 ;                            ;             ;
-; Average used               ; 1.07        ;
+; Average used               ; 1.09        ;
 ; Maximum used               ; 16          ;
 ;                            ;             ;
 ; Usage by Processor         ; % Time Used ;
 ;     Processor 1            ; 100.0%      ;
-;     Processor 2            ;   0.5%      ;
-;     Processors 3-16        ;   0.4%      ;
+;     Processor 2            ;   0.7%      ;
+;     Processors 3-16        ;   0.6%      ;
 +----------------------------+-------------+
 
 
@@ -115,7 +117,7 @@ https://fpgasoftware.intel.com/eula.
 +------------+-----------------+---------------------------------------------------------+------+
 ; Fmax       ; Restricted Fmax ; Clock Name                                              ; Note ;
 +------------+-----------------+---------------------------------------------------------+------+
-; 216.97 MHz ; 216.97 MHz      ; VGA_CLK1_40|altpll_component|auto_generated|pll1|clk[0] ;      ;
+; 202.18 MHz ; 202.18 MHz      ; VGA_CLK1_40|altpll_component|auto_generated|pll1|clk[0] ;      ;
 +------------+-----------------+---------------------------------------------------------+------+
 This panel reports FMAX for every clock in the design, regardless of the user-specified clock periods.  FMAX is only computed for paths where the source and destination registers or ports are driven by the same clock.  Paths of different clocks, including generated clocks, are ignored.  For paths between a clock and its inversion, FMAX is computed as if the rising and falling edges are scaled along with FMAX, such that the duty cycle (in terms of a percentage) is maintained. Altera recommends that you always use clock constraints and other slack reports for sign-off analysis.
 
@@ -125,7 +127,7 @@ This panel reports FMAX for every clock in the design, regardless of the user-sp
 +---------------------------------------------------------+--------+---------------+
 ; Clock                                                   ; Slack  ; End Point TNS ;
 +---------------------------------------------------------+--------+---------------+
-; VGA_CLK1_40|altpll_component|auto_generated|pll1|clk[0] ; 20.391 ; 0.000         ;
+; VGA_CLK1_40|altpll_component|auto_generated|pll1|clk[0] ; 20.054 ; 0.000         ;
 +---------------------------------------------------------+--------+---------------+
 
 
@@ -134,7 +136,7 @@ This panel reports FMAX for every clock in the design, regardless of the user-sp
 +---------------------------------------------------------+-------+---------------+
 ; Clock                                                   ; Slack ; End Point TNS ;
 +---------------------------------------------------------+-------+---------------+
-; VGA_CLK1_40|altpll_component|auto_generated|pll1|clk[0] ; 0.430 ; 0.000         ;
+; VGA_CLK1_40|altpll_component|auto_generated|pll1|clk[0] ; 0.429 ; 0.000         ;
 +---------------------------------------------------------+-------+---------------+
 
 
@@ -156,7 +158,7 @@ No paths to report.
 ; Clock                                                   ; Slack  ; End Point TNS ;
 +---------------------------------------------------------+--------+---------------+
 ; MAX10_CLK1_50                                           ; 9.777  ; 0.000         ;
-; VGA_CLK1_40|altpll_component|auto_generated|pll1|clk[0] ; 12.271 ; 0.000         ;
+; VGA_CLK1_40|altpll_component|auto_generated|pll1|clk[0] ; 12.273 ; 0.000         ;
 +---------------------------------------------------------+--------+---------------+
 
 
@@ -166,13 +168,13 @@ No paths to report.
 No synchronizer chains to report.
 
 
-+-----------------------------------------------------------------------------------------------+
-; Slow 1200mV 0C Model Fmax Summary                                                             ;
-+------------+-----------------+---------------------------------------------------------+------+
-; Fmax       ; Restricted Fmax ; Clock Name                                              ; Note ;
-+------------+-----------------+---------------------------------------------------------+------+
-; 238.61 MHz ; 238.61 MHz      ; VGA_CLK1_40|altpll_component|auto_generated|pll1|clk[0] ;      ;
-+------------+-----------------+---------------------------------------------------------+------+
++----------------------------------------------------------------------------------------------+
+; Slow 1200mV 0C Model Fmax Summary                                                            ;
++-----------+-----------------+---------------------------------------------------------+------+
+; Fmax      ; Restricted Fmax ; Clock Name                                              ; Note ;
++-----------+-----------------+---------------------------------------------------------+------+
+; 219.2 MHz ; 219.2 MHz       ; VGA_CLK1_40|altpll_component|auto_generated|pll1|clk[0] ;      ;
++-----------+-----------------+---------------------------------------------------------+------+
 This panel reports FMAX for every clock in the design, regardless of the user-specified clock periods.  FMAX is only computed for paths where the source and destination registers or ports are driven by the same clock.  Paths of different clocks, including generated clocks, are ignored.  For paths between a clock and its inversion, FMAX is computed as if the rising and falling edges are scaled along with FMAX, such that the duty cycle (in terms of a percentage) is maintained. Altera recommends that you always use clock constraints and other slack reports for sign-off analysis.
 
 
@@ -181,7 +183,7 @@ This panel reports FMAX for every clock in the design, regardless of the user-sp
 +---------------------------------------------------------+--------+---------------+
 ; Clock                                                   ; Slack  ; End Point TNS ;
 +---------------------------------------------------------+--------+---------------+
-; VGA_CLK1_40|altpll_component|auto_generated|pll1|clk[0] ; 20.809 ; 0.000         ;
+; VGA_CLK1_40|altpll_component|auto_generated|pll1|clk[0] ; 20.438 ; 0.000         ;
 +---------------------------------------------------------+--------+---------------+
 
 
@@ -212,7 +214,7 @@ No paths to report.
 ; Clock                                                   ; Slack  ; End Point TNS ;
 +---------------------------------------------------------+--------+---------------+
 ; MAX10_CLK1_50                                           ; 9.784  ; 0.000         ;
-; VGA_CLK1_40|altpll_component|auto_generated|pll1|clk[0] ; 12.224 ; 0.000         ;
+; VGA_CLK1_40|altpll_component|auto_generated|pll1|clk[0] ; 12.221 ; 0.000         ;
 +---------------------------------------------------------+--------+---------------+
 
 
@@ -227,7 +229,7 @@ No synchronizer chains to report.
 +---------------------------------------------------------+--------+---------------+
 ; Clock                                                   ; Slack  ; End Point TNS ;
 +---------------------------------------------------------+--------+---------------+
-; VGA_CLK1_40|altpll_component|auto_generated|pll1|clk[0] ; 22.756 ; 0.000         ;
+; VGA_CLK1_40|altpll_component|auto_generated|pll1|clk[0] ; 22.630 ; 0.000         ;
 +---------------------------------------------------------+--------+---------------+
 
 
@@ -258,7 +260,7 @@ No paths to report.
 ; Clock                                                   ; Slack  ; End Point TNS ;
 +---------------------------------------------------------+--------+---------------+
 ; MAX10_CLK1_50                                           ; 9.530  ; 0.000         ;
-; VGA_CLK1_40|altpll_component|auto_generated|pll1|clk[0] ; 12.305 ; 0.000         ;
+; VGA_CLK1_40|altpll_component|auto_generated|pll1|clk[0] ; 12.304 ; 0.000         ;
 +---------------------------------------------------------+--------+---------------+
 
 
@@ -273,9 +275,9 @@ No synchronizer chains to report.
 +----------------------------------------------------------+--------+-------+----------+---------+---------------------+
 ; Clock                                                    ; Setup  ; Hold  ; Recovery ; Removal ; Minimum Pulse Width ;
 +----------------------------------------------------------+--------+-------+----------+---------+---------------------+
-; Worst-case Slack                                         ; 20.391 ; 0.212 ; N/A      ; N/A     ; 9.530               ;
+; Worst-case Slack                                         ; 20.054 ; 0.212 ; N/A      ; N/A     ; 9.530               ;
 ;  MAX10_CLK1_50                                           ; N/A    ; N/A   ; N/A      ; N/A     ; 9.530               ;
-;  VGA_CLK1_40|altpll_component|auto_generated|pll1|clk[0] ; 20.391 ; 0.212 ; N/A      ; N/A     ; 12.224              ;
+;  VGA_CLK1_40|altpll_component|auto_generated|pll1|clk[0] ; 20.054 ; 0.212 ; N/A      ; N/A     ; 12.221              ;
 ; Design-wide TNS                                          ; 0.0    ; 0.0   ; 0.0      ; 0.0     ; 0.0                 ;
 ;  MAX10_CLK1_50                                           ; N/A    ; N/A   ; N/A      ; N/A     ; 0.000               ;
 ;  VGA_CLK1_40|altpll_component|auto_generated|pll1|clk[0] ; 0.000  ; 0.000 ; N/A      ; N/A     ; 0.000               ;
@@ -468,16 +470,6 @@ No synchronizer chains to report.
 ; MAX10_CLK2_50       ; 3.3-V LVTTL           ; 2640 ps         ; 2640 ps         ;
 ; KEY[0]              ; 3.3 V Schmitt Trigger ; 2640 ps         ; 2640 ps         ;
 ; KEY[1]              ; 3.3 V Schmitt Trigger ; 2640 ps         ; 2640 ps         ;
-; SW[0]               ; 3.3-V LVTTL           ; 2640 ps         ; 2640 ps         ;
-; SW[1]               ; 3.3-V LVTTL           ; 2640 ps         ; 2640 ps         ;
-; SW[2]               ; 3.3-V LVTTL           ; 2640 ps         ; 2640 ps         ;
-; SW[3]               ; 3.3-V LVTTL           ; 2640 ps         ; 2640 ps         ;
-; SW[4]               ; 3.3-V LVTTL           ; 2640 ps         ; 2640 ps         ;
-; SW[5]               ; 3.3-V LVTTL           ; 2640 ps         ; 2640 ps         ;
-; SW[6]               ; 3.3-V LVTTL           ; 2640 ps         ; 2640 ps         ;
-; SW[7]               ; 3.3-V LVTTL           ; 2640 ps         ; 2640 ps         ;
-; SW[8]               ; 3.3-V LVTTL           ; 2640 ps         ; 2640 ps         ;
-; SW[9]               ; 3.3-V LVTTL           ; 2640 ps         ; 2640 ps         ;
 ; GSENSOR_INT[1]      ; 3.3-V LVTTL           ; 2640 ps         ; 2640 ps         ;
 ; GSENSOR_INT[2]      ; 3.3-V LVTTL           ; 2640 ps         ; 2640 ps         ;
 ; DRAM_DQ[0]          ; 3.3-V LVTTL           ; 2640 ps         ; 2640 ps         ;
@@ -551,6 +543,16 @@ No synchronizer chains to report.
 ; GPIO[33]            ; 3.3-V LVTTL           ; 2640 ps         ; 2640 ps         ;
 ; GPIO[34]            ; 3.3-V LVTTL           ; 2640 ps         ; 2640 ps         ;
 ; GPIO[35]            ; 3.3-V LVTTL           ; 2640 ps         ; 2640 ps         ;
+; SW[0]               ; 3.3-V LVTTL           ; 2640 ps         ; 2640 ps         ;
+; SW[1]               ; 3.3-V LVTTL           ; 2640 ps         ; 2640 ps         ;
+; SW[2]               ; 3.3-V LVTTL           ; 2640 ps         ; 2640 ps         ;
+; SW[3]               ; 3.3-V LVTTL           ; 2640 ps         ; 2640 ps         ;
+; SW[4]               ; 3.3-V LVTTL           ; 2640 ps         ; 2640 ps         ;
+; SW[5]               ; 3.3-V LVTTL           ; 2640 ps         ; 2640 ps         ;
+; SW[6]               ; 3.3-V LVTTL           ; 2640 ps         ; 2640 ps         ;
+; SW[7]               ; 3.3-V LVTTL           ; 2640 ps         ; 2640 ps         ;
+; SW[8]               ; 3.3-V LVTTL           ; 2640 ps         ; 2640 ps         ;
+; SW[9]               ; 3.3-V LVTTL           ; 2640 ps         ; 2640 ps         ;
 ; MAX10_CLK1_50       ; 3.3-V LVTTL           ; 2640 ps         ; 2640 ps         ;
 ; ~ALTERA_TMS~        ; 2.5 V Schmitt Trigger ; 2000 ps         ; 2000 ps         ;
 ; ~ALTERA_TCK~        ; 2.5 V Schmitt Trigger ; 2000 ps         ; 2000 ps         ;
@@ -1098,7 +1100,7 @@ No synchronizer chains to report.
 +---------------------------------------------------------+---------------------------------------------------------+----------+----------+----------+----------+
 ; From Clock                                              ; To Clock                                                ; RR Paths ; FR Paths ; RF Paths ; FF Paths ;
 +---------------------------------------------------------+---------------------------------------------------------+----------+----------+----------+----------+
-; VGA_CLK1_40|altpll_component|auto_generated|pll1|clk[0] ; VGA_CLK1_40|altpll_component|auto_generated|pll1|clk[0] ; 904      ; 0        ; 0        ; 0        ;
+; VGA_CLK1_40|altpll_component|auto_generated|pll1|clk[0] ; VGA_CLK1_40|altpll_component|auto_generated|pll1|clk[0] ; 1075     ; 0        ; 0        ; 0        ;
 +---------------------------------------------------------+---------------------------------------------------------+----------+----------+----------+----------+
 Entries labeled "false path" only account for clock-to-clock false paths and not path-based false paths. As a result, actual path counts may be lower than reported.
 
@@ -1108,7 +1110,7 @@ Entries labeled "false path" only account for clock-to-clock false paths and not
 +---------------------------------------------------------+---------------------------------------------------------+----------+----------+----------+----------+
 ; From Clock                                              ; To Clock                                                ; RR Paths ; FR Paths ; RF Paths ; FF Paths ;
 +---------------------------------------------------------+---------------------------------------------------------+----------+----------+----------+----------+
-; VGA_CLK1_40|altpll_component|auto_generated|pll1|clk[0] ; VGA_CLK1_40|altpll_component|auto_generated|pll1|clk[0] ; 904      ; 0        ; 0        ; 0        ;
+; VGA_CLK1_40|altpll_component|auto_generated|pll1|clk[0] ; VGA_CLK1_40|altpll_component|auto_generated|pll1|clk[0] ; 1075     ; 0        ; 0        ; 0        ;
 +---------------------------------------------------------+---------------------------------------------------------+----------+----------+----------+----------+
 Entries labeled "false path" only account for clock-to-clock false paths and not path-based false paths. As a result, actual path counts may be lower than reported.
 
@@ -1132,10 +1134,10 @@ No non-DPA dedicated SERDES Receiver circuitry present in device or used in desi
 +---------------------------------+-------+------+
 ; Illegal Clocks                  ; 0     ; 0    ;
 ; Unconstrained Clocks            ; 0     ; 0    ;
-; Unconstrained Input Ports       ; 0     ; 0    ;
-; Unconstrained Input Port Paths  ; 0     ; 0    ;
-; Unconstrained Output Ports      ; 16    ; 16   ;
-; Unconstrained Output Port Paths ; 16    ; 16   ;
+; Unconstrained Input Ports       ; 10    ; 10   ;
+; Unconstrained Input Port Paths  ; 10    ; 10   ;
+; Unconstrained Output Ports      ; 22    ; 22   ;
+; Unconstrained Output Port Paths ; 22    ; 22   ;
 +---------------------------------+-------+------+
 
 
@@ -1149,6 +1151,24 @@ No non-DPA dedicated SERDES Receiver circuitry present in device or used in desi
 +---------------------------------------------------------+---------------------------------------------------------+-----------+-------------+
 
 
++---------------------------------------------------------------------------------------------------+
+; Unconstrained Input Ports                                                                         ;
++------------+--------------------------------------------------------------------------------------+
+; Input Port ; Comment                                                                              ;
++------------+--------------------------------------------------------------------------------------+
+; SW[0]      ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; SW[1]      ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; SW[2]      ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; SW[3]      ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; SW[4]      ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; SW[5]      ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; SW[6]      ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; SW[7]      ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; SW[8]      ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; SW[9]      ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
++------------+--------------------------------------------------------------------------------------+
+
+
 +-----------------------------------------------------------------------------------------------------+
 ; Unconstrained Output Ports                                                                          ;
 +-------------+---------------------------------------------------------------------------------------+
@@ -1164,6 +1184,12 @@ No non-DPA dedicated SERDES Receiver circuitry present in device or used in desi
 ; LEDR[7]     ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
 ; LEDR[8]     ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
 ; LEDR[9]     ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; VGA_B[2]    ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; VGA_B[3]    ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; VGA_G[0]    ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; VGA_G[1]    ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; VGA_G[2]    ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; VGA_G[3]    ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
 ; VGA_HS      ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
 ; VGA_R[0]    ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
 ; VGA_R[1]    ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
@@ -1173,6 +1199,24 @@ No non-DPA dedicated SERDES Receiver circuitry present in device or used in desi
 +-------------+---------------------------------------------------------------------------------------+
 
 
++---------------------------------------------------------------------------------------------------+
+; Unconstrained Input Ports                                                                         ;
++------------+--------------------------------------------------------------------------------------+
+; Input Port ; Comment                                                                              ;
++------------+--------------------------------------------------------------------------------------+
+; SW[0]      ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; SW[1]      ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; SW[2]      ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; SW[3]      ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; SW[4]      ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; SW[5]      ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; SW[6]      ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; SW[7]      ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; SW[8]      ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; SW[9]      ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
++------------+--------------------------------------------------------------------------------------+
+
+
 +-----------------------------------------------------------------------------------------------------+
 ; Unconstrained Output Ports                                                                          ;
 +-------------+---------------------------------------------------------------------------------------+
@@ -1188,6 +1232,12 @@ No non-DPA dedicated SERDES Receiver circuitry present in device or used in desi
 ; LEDR[7]     ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
 ; LEDR[8]     ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
 ; LEDR[9]     ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; VGA_B[2]    ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; VGA_B[3]    ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; VGA_G[0]    ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; VGA_G[1]    ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; VGA_G[2]    ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; VGA_G[3]    ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
 ; VGA_HS      ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
 ; VGA_R[0]    ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
 ; VGA_R[1]    ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
@@ -1203,7 +1253,7 @@ No non-DPA dedicated SERDES Receiver circuitry present in device or used in desi
 Info: *******************************************************************
 Info: Running Quartus Prime Timing Analyzer
     Info: Version 22.1std.1 Build 917 02/14/2023 SC Lite Edition
-    Info: Processing started: Fri Aug 11 22:49:29 2023
+    Info: Processing started: Fri Aug 11 23:19:38 2023
 Info: Command: quartus_sta vga_test -c vga_test
 Info: qsta_default_script.tcl version: #1
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
@@ -1222,30 +1272,30 @@ Info (332123): Deriving Clock Uncertainty. Please refer to report_sdc in the Tim
 Info: Found TIMING_ANALYZER_REPORT_SCRIPT_INCLUDE_DEFAULT_ANALYSIS = ON
 Info: Analyzing Slow 1200mV 85C Model
 Info: Can't run Report Timing Closure Recommendations. The current device family is not supported.
-Info (332146): Worst-case setup slack is 20.391
+Info (332146): Worst-case setup slack is 20.054
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):    20.391               0.000 VGA_CLK1_40|altpll_component|auto_generated|pll1|clk[0] 
-Info (332146): Worst-case hold slack is 0.430
+    Info (332119):    20.054               0.000 VGA_CLK1_40|altpll_component|auto_generated|pll1|clk[0] 
+Info (332146): Worst-case hold slack is 0.429
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):     0.430               0.000 VGA_CLK1_40|altpll_component|auto_generated|pll1|clk[0] 
+    Info (332119):     0.429               0.000 VGA_CLK1_40|altpll_component|auto_generated|pll1|clk[0] 
 Info (332140): No Recovery paths to report
 Info (332140): No Removal paths to report
 Info (332146): Worst-case minimum pulse width slack is 9.777
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
     Info (332119):     9.777               0.000 MAX10_CLK1_50 
-    Info (332119):    12.271               0.000 VGA_CLK1_40|altpll_component|auto_generated|pll1|clk[0] 
+    Info (332119):    12.273               0.000 VGA_CLK1_40|altpll_component|auto_generated|pll1|clk[0] 
 Info: Analyzing Slow 1200mV 0C Model
 Info (334003): Started post-fitting delay annotation
 Warning (334000): Timing characteristics of device 10M50DAF484C6GES are preliminary
 Info (334004): Delay annotation completed successfully
 Info (332123): Deriving Clock Uncertainty. Please refer to report_sdc in the Timing Analyzer to see clock uncertainties.
-Info (332146): Worst-case setup slack is 20.809
+Info (332146): Worst-case setup slack is 20.438
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):    20.809               0.000 VGA_CLK1_40|altpll_component|auto_generated|pll1|clk[0] 
+    Info (332119):    20.438               0.000 VGA_CLK1_40|altpll_component|auto_generated|pll1|clk[0] 
 Info (332146): Worst-case hold slack is 0.355
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
@@ -1256,13 +1306,13 @@ Info (332146): Worst-case minimum pulse width slack is 9.784
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
     Info (332119):     9.784               0.000 MAX10_CLK1_50 
-    Info (332119):    12.224               0.000 VGA_CLK1_40|altpll_component|auto_generated|pll1|clk[0] 
+    Info (332119):    12.221               0.000 VGA_CLK1_40|altpll_component|auto_generated|pll1|clk[0] 
 Info: Analyzing Fast 1200mV 0C Model
 Info (332123): Deriving Clock Uncertainty. Please refer to report_sdc in the Timing Analyzer to see clock uncertainties.
-Info (332146): Worst-case setup slack is 22.756
+Info (332146): Worst-case setup slack is 22.630
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):    22.756               0.000 VGA_CLK1_40|altpll_component|auto_generated|pll1|clk[0] 
+    Info (332119):    22.630               0.000 VGA_CLK1_40|altpll_component|auto_generated|pll1|clk[0] 
 Info (332146): Worst-case hold slack is 0.212
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
@@ -1273,12 +1323,12 @@ Info (332146): Worst-case minimum pulse width slack is 9.530
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
     Info (332119):     9.530               0.000 MAX10_CLK1_50 
-    Info (332119):    12.305               0.000 VGA_CLK1_40|altpll_component|auto_generated|pll1|clk[0] 
+    Info (332119):    12.304               0.000 VGA_CLK1_40|altpll_component|auto_generated|pll1|clk[0] 
 Info (332102): Design is not fully constrained for setup requirements
 Info (332102): Design is not fully constrained for hold requirements
 Info: Quartus Prime Timing Analyzer was successful. 0 errors, 3 warnings
-    Info: Peak virtual memory: 714 megabytes
-    Info: Processing ended: Fri Aug 11 22:49:35 2023
+    Info: Peak virtual memory: 675 megabytes
+    Info: Processing ended: Fri Aug 11 23:19:44 2023
     Info: Elapsed time: 00:00:06
     Info: Total CPU time (on all processors): 00:00:06
 
