@@ -1,5 +1,5 @@
 Analysis & Synthesis report for vga_test
-Fri Aug 11 23:19:09 2023
+Sun Aug 13 01:05:20 2023
 Quartus Prime Version 22.1std.1 Build 917 02/14/2023 SC Lite Edition
 
 
@@ -14,17 +14,16 @@ Quartus Prime Version 22.1std.1 Build 917 02/14/2023 SC Lite Edition
   6. Analysis & Synthesis Resource Usage Summary
   7. Analysis & Synthesis Resource Utilization by Entity
   8. Analysis & Synthesis IP Cores Summary
-  9. Registers Removed During Synthesis
+  9. User-Specified and Inferred Latches
  10. General Register Statistics
  11. Multiplexer Restructuring Statistics (Restructuring Performed)
  12. Parameter Settings for User Entity Instance: pll0:VGA_CLK1_40|altpll:altpll_component
  13. Parameter Settings for User Entity Instance: vga_driver:vga_handler
  14. altpll Parameter Settings by Entity Instance
- 15. Port Connectivity Checks: "vga_driver:vga_handler"
- 16. Post-Synthesis Netlist Statistics for Top Partition
- 17. Elapsed Time Per Partition
- 18. Analysis & Synthesis Messages
- 19. Analysis & Synthesis Suppressed Messages
+ 15. Post-Synthesis Netlist Statistics for Top Partition
+ 16. Elapsed Time Per Partition
+ 17. Analysis & Synthesis Messages
+ 18. Analysis & Synthesis Suppressed Messages
 
 
 
@@ -51,15 +50,15 @@ https://fpgasoftware.intel.com/eula.
 +-------------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                        ;
 +------------------------------------+------------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Fri Aug 11 23:19:09 2023          ;
+; Analysis & Synthesis Status        ; Successful - Sun Aug 13 01:05:20 2023          ;
 ; Quartus Prime Version              ; 22.1std.1 Build 917 02/14/2023 SC Lite Edition ;
 ; Revision Name                      ; vga_test                                       ;
 ; Top-level Entity Name              ; DE10_LITE_Golden_Top                           ;
 ; Family                             ; MAX 10                                         ;
-; Total logic elements               ; 74                                             ;
-;     Total combinational functions  ; 74                                             ;
-;     Dedicated logic registers      ; 33                                             ;
-; Total registers                    ; 33                                             ;
+; Total logic elements               ; 78                                             ;
+;     Total combinational functions  ; 78                                             ;
+;     Dedicated logic registers      ; 35                                             ;
+; Total registers                    ; 35                                             ;
 ; Total pins                         ; 185                                            ;
 ; Total virtual pins                 ; 0                                              ;
 ; Total memory bits                  ; 0                                              ;
@@ -196,20 +195,20 @@ https://fpgasoftware.intel.com/eula.
 +---------------------------------------------+--------------------------------------------------------------------------------------+
 ; Resource                                    ; Usage                                                                                ;
 +---------------------------------------------+--------------------------------------------------------------------------------------+
-; Estimated Total logic elements              ; 74                                                                                   ;
+; Estimated Total logic elements              ; 78                                                                                   ;
 ;                                             ;                                                                                      ;
-; Total combinational functions               ; 74                                                                                   ;
+; Total combinational functions               ; 78                                                                                   ;
 ; Logic element usage by number of LUT inputs ;                                                                                      ;
-;     -- 4 input functions                    ; 46                                                                                   ;
+;     -- 4 input functions                    ; 48                                                                                   ;
 ;     -- 3 input functions                    ; 2                                                                                    ;
-;     -- <=2 input functions                  ; 26                                                                                   ;
+;     -- <=2 input functions                  ; 28                                                                                   ;
 ;                                             ;                                                                                      ;
 ; Logic elements by mode                      ;                                                                                      ;
-;     -- normal mode                          ; 55                                                                                   ;
+;     -- normal mode                          ; 59                                                                                   ;
 ;     -- arithmetic mode                      ; 19                                                                                   ;
 ;                                             ;                                                                                      ;
-; Total registers                             ; 33                                                                                   ;
-;     -- Dedicated logic registers            ; 33                                                                                   ;
+; Total registers                             ; 35                                                                                   ;
+;     -- Dedicated logic registers            ; 35                                                                                   ;
 ;     -- I/O registers                        ; 0                                                                                    ;
 ;                                             ;                                                                                      ;
 ; I/O pins                                    ; 185                                                                                  ;
@@ -220,9 +219,9 @@ https://fpgasoftware.intel.com/eula.
 ;     -- PLLs                                 ; 1                                                                                    ;
 ;                                             ;                                                                                      ;
 ; Maximum fan-out node                        ; pll0:VGA_CLK1_40|altpll:altpll_component|pll0_altpll:auto_generated|wire_pll1_clk[0] ;
-; Maximum fan-out                             ; 34                                                                                   ;
-; Total fan-out                               ; 608                                                                                  ;
-; Average fan-out                             ; 1.11                                                                                 ;
+; Maximum fan-out                             ; 36                                                                                   ;
+; Total fan-out                               ; 628                                                                                  ;
+; Average fan-out                             ; 1.13                                                                                 ;
 +---------------------------------------------+--------------------------------------------------------------------------------------+
 
 
@@ -231,11 +230,11 @@ https://fpgasoftware.intel.com/eula.
 +---------------------------------------+---------------------+---------------------------+-------------+------------+--------------+---------+-----------+------+--------------+------------+-------------------------------------------------------------------------------------------+----------------------+--------------+
 ; Compilation Hierarchy Node            ; Combinational ALUTs ; Dedicated Logic Registers ; Memory Bits ; UFM Blocks ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; ADC blocks ; Full Hierarchy Name                                                                       ; Entity Name          ; Library Name ;
 +---------------------------------------+---------------------+---------------------------+-------------+------------+--------------+---------+-----------+------+--------------+------------+-------------------------------------------------------------------------------------------+----------------------+--------------+
-; |DE10_LITE_Golden_Top                 ; 74 (0)              ; 33 (0)                    ; 0           ; 0          ; 0            ; 0       ; 0         ; 185  ; 0            ; 0          ; |DE10_LITE_Golden_Top                                                                     ; DE10_LITE_Golden_Top ; work         ;
+; |DE10_LITE_Golden_Top                 ; 78 (2)              ; 35 (0)                    ; 0           ; 0          ; 0            ; 0       ; 0         ; 185  ; 0            ; 0          ; |DE10_LITE_Golden_Top                                                                     ; DE10_LITE_Golden_Top ; work         ;
 ;    |pll0:VGA_CLK1_40|                 ; 0 (0)               ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |DE10_LITE_Golden_Top|pll0:VGA_CLK1_40                                                    ; pll0                 ; work         ;
 ;       |altpll:altpll_component|       ; 0 (0)               ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |DE10_LITE_Golden_Top|pll0:VGA_CLK1_40|altpll:altpll_component                            ; altpll               ; work         ;
 ;          |pll0_altpll:auto_generated| ; 0 (0)               ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |DE10_LITE_Golden_Top|pll0:VGA_CLK1_40|altpll:altpll_component|pll0_altpll:auto_generated ; pll0_altpll          ; work         ;
-;    |vga_driver:vga_handler|           ; 74 (74)             ; 33 (33)                   ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |DE10_LITE_Golden_Top|vga_driver:vga_handler                                              ; vga_driver           ; work         ;
+;    |vga_driver:vga_handler|           ; 76 (76)             ; 35 (35)                   ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |DE10_LITE_Golden_Top|vga_driver:vga_handler                                              ; vga_driver           ; work         ;
 +---------------------------------------+---------------------+---------------------------+-------------+------------+--------------+---------+-----------+------+--------------+------------+-------------------------------------------------------------------------------------------+----------------------+--------------+
 Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
 
@@ -249,15 +248,16 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +--------+--------------+---------+--------------+--------------+----------------------------------------+-----------------+
 
 
-+-------------------------------------------------------------------------------------+
-; Registers Removed During Synthesis                                                  ;
-+---------------------------------------+---------------------------------------------+
-; Register name                         ; Reason for Removal                          ;
-+---------------------------------------+---------------------------------------------+
-; vga_driver:vga_handler|VGA_B[1]       ; Merged with vga_driver:vga_handler|VGA_B[0] ;
-; vga_driver:vga_handler|VGA_B[0]       ; Stuck at GND due to stuck port data_in      ;
-; Total Number of Removed Registers = 2 ;                                             ;
-+---------------------------------------+---------------------------------------------+
++---------------------------------------------------------------------------------------------------+
+; User-Specified and Inferred Latches                                                               ;
++----------------------------------------------------+---------------------+------------------------+
+; Latch Name                                         ; Latch Enable Signal ; Free of Timing Hazards ;
++----------------------------------------------------+---------------------+------------------------+
+; key0_state                                         ; KEY[0]              ; yes                    ;
+; key1_state                                         ; KEY[1]              ; yes                    ;
+; Number of user-specified and inferred latches = 2  ;                     ;                        ;
++----------------------------------------------------+---------------------+------------------------+
+Note: All latches listed above may not be present at the end of synthesis due to various synthesis optimizations.
 
 
 +------------------------------------------------------+
@@ -265,12 +265,12 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +----------------------------------------------+-------+
 ; Statistic                                    ; Value ;
 +----------------------------------------------+-------+
-; Total registers                              ; 33    ;
+; Total registers                              ; 35    ;
 ; Number of registers using Synchronous Clear  ; 0     ;
 ; Number of registers using Synchronous Load   ; 0     ;
 ; Number of registers using Asynchronous Clear ; 0     ;
 ; Number of registers using Asynchronous Load  ; 0     ;
-; Number of registers using Clock Enable       ; 22    ;
+; Number of registers using Clock Enable       ; 24    ;
 ; Number of registers using Preset             ; 0     ;
 +----------------------------------------------+-------+
 
@@ -281,8 +281,8 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                                    ;
 +--------------------+-----------+---------------+----------------------+------------------------+------------+---------------------------------------------------------------+
 ; 5:1                ; 10 bits   ; 30 LEs        ; 10 LEs               ; 20 LEs                 ; Yes        ; |DE10_LITE_Golden_Top|vga_driver:vga_handler|line_counter[1]  ;
-; 5:1                ; 11 bits   ; 33 LEs        ; 11 LEs               ; 22 LEs                 ; Yes        ; |DE10_LITE_Golden_Top|vga_driver:vga_handler|pixel_counter[9] ;
-; 9:1                ; 10 bits   ; 60 LEs        ; 10 LEs               ; 50 LEs                 ; Yes        ; |DE10_LITE_Golden_Top|vga_driver:vga_handler|VGA_R[0]         ;
+; 5:1                ; 11 bits   ; 33 LEs        ; 11 LEs               ; 22 LEs                 ; Yes        ; |DE10_LITE_Golden_Top|vga_driver:vga_handler|pixel_counter[1] ;
+; 9:1                ; 12 bits   ; 72 LEs        ; 12 LEs               ; 60 LEs                 ; Yes        ; |DE10_LITE_Golden_Top|vga_driver:vga_handler|VGA_R[3]         ;
 +--------------------+-----------+---------------+----------------------+------------------------+------------+---------------------------------------------------------------+
 
 
@@ -700,38 +700,29 @@ Note: In order to hide this table in the UI and the text report file, please set
 +-------------------------------+------------------------------------------+
 
 
-+----------------------------------------------------+
-; Port Connectivity Checks: "vga_driver:vga_handler" ;
-+-----------------+-------+----------+---------------+
-; Port            ; Type  ; Severity ; Details       ;
-+-----------------+-------+----------+---------------+
-; VGA_COLOR[1..0] ; Input ; Info     ; Stuck at GND  ;
-+-----------------+-------+----------+---------------+
-
-
 +-----------------------------------------------------+
 ; Post-Synthesis Netlist Statistics for Top Partition ;
 +-----------------------+-----------------------------+
 ; Type                  ; Count                       ;
 +-----------------------+-----------------------------+
 ; boundary_port         ; 185                         ;
-; cycloneiii_ff         ; 33                          ;
-;     ENA               ; 22                          ;
+; cycloneiii_ff         ; 35                          ;
+;     ENA               ; 24                          ;
 ;     plain             ; 11                          ;
 ; cycloneiii_io_obuf    ; 71                          ;
-; cycloneiii_lcell_comb ; 75                          ;
+; cycloneiii_lcell_comb ; 79                          ;
 ;     arith             ; 19                          ;
 ;         2 data inputs ; 19                          ;
-;     normal            ; 56                          ;
+;     normal            ; 60                          ;
 ;         0 data inputs ; 1                           ;
 ;         1 data inputs ; 2                           ;
-;         2 data inputs ; 5                           ;
+;         2 data inputs ; 7                           ;
 ;         3 data inputs ; 2                           ;
-;         4 data inputs ; 46                          ;
+;         4 data inputs ; 48                          ;
 ; cycloneiii_pll        ; 1                           ;
 ;                       ;                             ;
 ; Max LUT depth         ; 4.00                        ;
-; Average LUT depth     ; 1.83                        ;
+; Average LUT depth     ; 1.81                        ;
 +-----------------------+-----------------------------+
 
 
@@ -750,7 +741,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 22.1std.1 Build 917 02/14/2023 SC Lite Edition
-    Info: Processing started: Fri Aug 11 23:19:00 2023
+    Info: Processing started: Sun Aug 13 01:05:10 2023
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off vga_test -c vga_test
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (20030): Parallel compilation is enabled and will use 16 of the 16 processors detected
@@ -763,6 +754,10 @@ Info (12021): Found 1 design units, including 1 entities, in source file vga_tes
 Info (12021): Found 1 design units, including 1 entities, in source file pll0.v
     Info (12023): Found entity 1: pll0 File: /home/chaitanya/Documents/QuartusProjects/de10-lite-drivers/vga_test/pll0.v Line: 40
 Info (12127): Elaborating entity "DE10_LITE_Golden_Top" for the top level hierarchy
+Warning (10235): Verilog HDL Always Construct warning at DE10_LITE_Golden_Top.v(142): variable "key0_state" is read inside the Always Construct but isn't in the Always Construct's Event Control File: /home/chaitanya/Documents/QuartusProjects/de10-lite-drivers/vga_test/DE10_LITE_Golden_Top.v Line: 142
+Warning (10240): Verilog HDL Always Construct warning at DE10_LITE_Golden_Top.v(140): inferring latch(es) for variable "key0_state", which holds its previous value in one or more paths through the always construct File: /home/chaitanya/Documents/QuartusProjects/de10-lite-drivers/vga_test/DE10_LITE_Golden_Top.v Line: 140
+Warning (10235): Verilog HDL Always Construct warning at DE10_LITE_Golden_Top.v(147): variable "key1_state" is read inside the Always Construct but isn't in the Always Construct's Event Control File: /home/chaitanya/Documents/QuartusProjects/de10-lite-drivers/vga_test/DE10_LITE_Golden_Top.v Line: 147
+Warning (10240): Verilog HDL Always Construct warning at DE10_LITE_Golden_Top.v(145): inferring latch(es) for variable "key1_state", which holds its previous value in one or more paths through the always construct File: /home/chaitanya/Documents/QuartusProjects/de10-lite-drivers/vga_test/DE10_LITE_Golden_Top.v Line: 145
 Warning (10034): Output port "DRAM_ADDR" at DE10_LITE_Golden_Top.v(46) has no driver File: /home/chaitanya/Documents/QuartusProjects/de10-lite-drivers/vga_test/DE10_LITE_Golden_Top.v Line: 46
 Warning (10034): Output port "DRAM_BA" at DE10_LITE_Golden_Top.v(47) has no driver File: /home/chaitanya/Documents/QuartusProjects/de10-lite-drivers/vga_test/DE10_LITE_Golden_Top.v Line: 47
 Warning (10034): Output port "HEX0" at DE10_LITE_Golden_Top.v(61) has no driver File: /home/chaitanya/Documents/QuartusProjects/de10-lite-drivers/vga_test/DE10_LITE_Golden_Top.v Line: 61
@@ -781,7 +776,9 @@ Warning (10034): Output port "DRAM_UDQM" at DE10_LITE_Golden_Top.v(55) has no dr
 Warning (10034): Output port "DRAM_WE_N" at DE10_LITE_Golden_Top.v(56) has no driver File: /home/chaitanya/Documents/QuartusProjects/de10-lite-drivers/vga_test/DE10_LITE_Golden_Top.v Line: 56
 Warning (10034): Output port "GSENSOR_CS_N" at DE10_LITE_Golden_Top.v(105) has no driver File: /home/chaitanya/Documents/QuartusProjects/de10-lite-drivers/vga_test/DE10_LITE_Golden_Top.v Line: 105
 Warning (10034): Output port "GSENSOR_SCLK" at DE10_LITE_Golden_Top.v(107) has no driver File: /home/chaitanya/Documents/QuartusProjects/de10-lite-drivers/vga_test/DE10_LITE_Golden_Top.v Line: 107
-Info (12128): Elaborating entity "pll0" for hierarchy "pll0:VGA_CLK1_40" File: /home/chaitanya/Documents/QuartusProjects/de10-lite-drivers/vga_test/DE10_LITE_Golden_Top.v Line: 143
+Info (10041): Inferred latch for "key1_state" at DE10_LITE_Golden_Top.v(146) File: /home/chaitanya/Documents/QuartusProjects/de10-lite-drivers/vga_test/DE10_LITE_Golden_Top.v Line: 146
+Info (10041): Inferred latch for "key0_state" at DE10_LITE_Golden_Top.v(141) File: /home/chaitanya/Documents/QuartusProjects/de10-lite-drivers/vga_test/DE10_LITE_Golden_Top.v Line: 141
+Info (12128): Elaborating entity "pll0" for hierarchy "pll0:VGA_CLK1_40" File: /home/chaitanya/Documents/QuartusProjects/de10-lite-drivers/vga_test/DE10_LITE_Golden_Top.v Line: 166
 Info (12128): Elaborating entity "altpll" for hierarchy "pll0:VGA_CLK1_40|altpll:altpll_component" File: /home/chaitanya/Documents/QuartusProjects/de10-lite-drivers/vga_test/pll0.v Line: 91
 Info (12130): Elaborated megafunction instantiation "pll0:VGA_CLK1_40|altpll:altpll_component" File: /home/chaitanya/Documents/QuartusProjects/de10-lite-drivers/vga_test/pll0.v Line: 91
 Info (12133): Instantiated megafunction "pll0:VGA_CLK1_40|altpll:altpll_component" with the following parameter: File: /home/chaitanya/Documents/QuartusProjects/de10-lite-drivers/vga_test/pll0.v Line: 91
@@ -842,7 +839,7 @@ Info (12133): Instantiated megafunction "pll0:VGA_CLK1_40|altpll:altpll_componen
 Info (12021): Found 1 design units, including 1 entities, in source file db/pll0_altpll.v
     Info (12023): Found entity 1: pll0_altpll File: /home/chaitanya/Documents/QuartusProjects/de10-lite-drivers/vga_test/db/pll0_altpll.v Line: 30
 Info (12128): Elaborating entity "pll0_altpll" for hierarchy "pll0:VGA_CLK1_40|altpll:altpll_component|pll0_altpll:auto_generated" File: /home/chaitanya/intelFPGA_lite/22.1std/quartus/libraries/megafunctions/altpll.tdf Line: 898
-Info (12128): Elaborating entity "vga_driver" for hierarchy "vga_driver:vga_handler" File: /home/chaitanya/Documents/QuartusProjects/de10-lite-drivers/vga_test/DE10_LITE_Golden_Top.v Line: 171
+Info (12128): Elaborating entity "vga_driver" for hierarchy "vga_driver:vga_handler" File: /home/chaitanya/Documents/QuartusProjects/de10-lite-drivers/vga_test/DE10_LITE_Golden_Top.v Line: 194
 Warning (10230): Verilog HDL assignment warning at vga_driver.v(75): truncated value with size 32 to match size of target (11) File: /home/chaitanya/Documents/QuartusProjects/de10-lite-drivers/vga_test/vga_driver.v Line: 75
 Warning (10230): Verilog HDL assignment warning at vga_driver.v(79): truncated value with size 32 to match size of target (11) File: /home/chaitanya/Documents/QuartusProjects/de10-lite-drivers/vga_test/vga_driver.v Line: 79
 Warning (10230): Verilog HDL assignment warning at vga_driver.v(83): truncated value with size 32 to match size of target (11) File: /home/chaitanya/Documents/QuartusProjects/de10-lite-drivers/vga_test/vga_driver.v Line: 83
@@ -1007,31 +1004,27 @@ Warning (13024): Output pins are stuck at VCC or GND
     Warning (13410): Pin "HEX5[5]" is stuck at GND File: /home/chaitanya/Documents/QuartusProjects/de10-lite-drivers/vga_test/DE10_LITE_Golden_Top.v Line: 76
     Warning (13410): Pin "HEX5[6]" is stuck at GND File: /home/chaitanya/Documents/QuartusProjects/de10-lite-drivers/vga_test/DE10_LITE_Golden_Top.v Line: 76
     Warning (13410): Pin "HEX5[7]" is stuck at GND File: /home/chaitanya/Documents/QuartusProjects/de10-lite-drivers/vga_test/DE10_LITE_Golden_Top.v Line: 76
-    Warning (13410): Pin "VGA_B[0]" is stuck at GND File: /home/chaitanya/Documents/QuartusProjects/de10-lite-drivers/vga_test/DE10_LITE_Golden_Top.v Line: 96
-    Warning (13410): Pin "VGA_B[1]" is stuck at GND File: /home/chaitanya/Documents/QuartusProjects/de10-lite-drivers/vga_test/DE10_LITE_Golden_Top.v Line: 96
     Warning (13410): Pin "GSENSOR_CS_N" is stuck at GND File: /home/chaitanya/Documents/QuartusProjects/de10-lite-drivers/vga_test/DE10_LITE_Golden_Top.v Line: 105
     Warning (13410): Pin "GSENSOR_SCLK" is stuck at GND File: /home/chaitanya/Documents/QuartusProjects/de10-lite-drivers/vga_test/DE10_LITE_Golden_Top.v Line: 107
 Info (286030): Timing-Driven Synthesis is running
 Info (144001): Generated suppressed messages file /home/chaitanya/Documents/QuartusProjects/de10-lite-drivers/vga_test/output_files/vga_test.map.smsg
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 1 node(s), including 0 DDIO, 1 PLL, 0 transceiver and 0 LCELL
-Warning (21074): Design contains 6 input pin(s) that do not drive logic
+Warning (21074): Design contains 4 input pin(s) that do not drive logic
     Warning (15610): No output dependent on input pin "ADC_CLK_10" File: /home/chaitanya/Documents/QuartusProjects/de10-lite-drivers/vga_test/DE10_LITE_Golden_Top.v Line: 33
     Warning (15610): No output dependent on input pin "MAX10_CLK2_50" File: /home/chaitanya/Documents/QuartusProjects/de10-lite-drivers/vga_test/DE10_LITE_Golden_Top.v Line: 41
-    Warning (15610): No output dependent on input pin "KEY[0]" File: /home/chaitanya/Documents/QuartusProjects/de10-lite-drivers/vga_test/DE10_LITE_Golden_Top.v Line: 81
-    Warning (15610): No output dependent on input pin "KEY[1]" File: /home/chaitanya/Documents/QuartusProjects/de10-lite-drivers/vga_test/DE10_LITE_Golden_Top.v Line: 81
     Warning (15610): No output dependent on input pin "GSENSOR_INT[1]" File: /home/chaitanya/Documents/QuartusProjects/de10-lite-drivers/vga_test/DE10_LITE_Golden_Top.v Line: 106
     Warning (15610): No output dependent on input pin "GSENSOR_INT[2]" File: /home/chaitanya/Documents/QuartusProjects/de10-lite-drivers/vga_test/DE10_LITE_Golden_Top.v Line: 106
-Info (21057): Implemented 260 device resources after synthesis - the final resource count might be different
+Info (21057): Implemented 264 device resources after synthesis - the final resource count might be different
     Info (21058): Implemented 17 input pins
     Info (21059): Implemented 97 output pins
     Info (21060): Implemented 71 bidirectional pins
-    Info (21061): Implemented 74 logic cells
+    Info (21061): Implemented 78 logic cells
     Info (21065): Implemented 1 PLLs
 Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 194 warnings
     Info: Peak virtual memory: 500 megabytes
-    Info: Processing ended: Fri Aug 11 23:19:09 2023
-    Info: Elapsed time: 00:00:09
+    Info: Processing ended: Sun Aug 13 01:05:20 2023
+    Info: Elapsed time: 00:00:10
     Info: Total CPU time (on all processors): 00:00:28
 
 
