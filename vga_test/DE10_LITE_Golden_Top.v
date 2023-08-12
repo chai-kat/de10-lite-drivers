@@ -127,6 +127,32 @@ module DE10_LITE_Golden_Top(
 //  REG/WIRE declarations
 //=======================================================
 
+// turn decimal point off
+assign HEX0[7] = 1'b1;
+assign HEX1[7] = 1'b1;
+assign HEX2[7] = 1'b1;
+assign HEX3[7] = 1'b1;
+assign HEX4[7] = 1'b1;
+assign HEX5[7] = 1'b1;
+
+assign HEX5[6:0] = 7'b1111111;
+assign HEX4[6:0] = 7'b1111111;
+assign HEX3[6:0] = 7'b1111111;
+
+bcd_code_converter bcc_red (
+	.bcd_digit (SW[9:6]), 
+	.segments (HEX2[6:0])
+);
+bcd_code_converter bcc_green (
+	.bcd_digit (SW[5:2]), 
+	.segments (HEX2[6:0])
+);
+bcd_code_converter bcc_blue (
+	.bcd_digit ({SW[1:0], key1_state, key0_state}), 
+	.segments (HEX2[6:0])
+);
+
+
 reg key0_state;
 reg key1_state;
 
