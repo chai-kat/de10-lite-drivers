@@ -127,8 +127,31 @@ module DE10_LITE_Golden_Top(
 //  REG/WIRE declarations
 //=======================================================
 
+reg key0_state;
+reg key1_state;
+
+initial begin
+	key0_state = 1'b0;
+	key1_state = 1'b0;
+end
+
+
+// tools will synthesize a latch for these. maybe rework? 
+always @(KEY[0]) begin
+	if (KEY[0] == 1'b0) begin
+		key0_state = ~key0_state;
+	end
+end
+always @(KEY[1]) begin
+	if (KEY[1] == 1'b0) begin
+		key1_state = ~key1_state;
+	end
+end
+
 wire [11:0] vga_color_selector;
-assign vga_color_selector = {SW[9:0], 2'b00};
+// key 1 is closer to the switches that represent high bits of blue
+// so makes sense to have key 1 be a higher bit of blue
+assign vga_color_selector = {SW[9:0], key1_state, key0_state};
 
 
 //=======================================================
