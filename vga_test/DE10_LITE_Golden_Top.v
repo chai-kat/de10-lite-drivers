@@ -153,24 +153,55 @@ bcd_code_converter bcc_blue (
 );
 
 
+
 reg key0_state;
 reg key1_state;
 
+// both keys have a schmitt trigger. a click of a button lasts on order of milliseconds
+// at 40 MHz, 65536 (2 ** 16) cycles is 1.6 ms
+reg [15:0] key0_debounce_counter;
+reg [15:0] key1_debounce_counter;
+
+reg key0_debouncing_state;
+reg key1_debouncing_state;
+
+// keep track of last bit state in the VGA clock domain so I don't have to think about crossing
 initial begin
 	key0_state = 1'b0;
 	key1_state = 1'b0;
+	
+	key0_debounce_counter = 0;
+	key1_debounce_counter = 0;
+
+	key0_debouncing_state = 1'b0;
+	key1_debouncing_state = 1'b0;
 end
 
-
-// tools will synthesize a latch for these. maybe rework? 
-always @(KEY[0]) begin
-	if (KEY[0] == 1'b0) begin
-		key0_state = ~key0_state;
+always @(VGA_CLK1_40) begin
+	if(key0_debouncing_state == 1'b0) begin
+		if (KEY[0] == 1'b0) begin
+			key0_state = ~key0_state;
+			key0_debouncing_state = 1'b1;
+		end
+	end else begin
+		// if about to overflow, timer finished, so reset debouncing state
+		if(key0_debounce_counter == 16'hffff) begin
+			key0_debouncing_state = 1'b0;
+		end
+		key0_debounce_counter <= key0_debounce_counter + 1;
 	end
-end
-always @(KEY[1]) begin
-	if (KEY[1] == 1'b0) begin
-		key1_state = ~key1_state;
+
+	if(key1_debouncing_state == 1'b0) begin
+		if (KEY[1] == 1'b0) begin
+			key1_state = ~key1_state;
+			key1_debouncing_state = 1'b1;
+		end
+	end else begin
+		// if about to overflow, timer finished, so reset debouncing state
+		if(key1_debounce_counter == 16'hffff) begin
+			key1_debouncing_state = 1'b0;
+		end
+		key1_debounce_counter <= key1_debounce_counter + 1;
 	end
 end
 

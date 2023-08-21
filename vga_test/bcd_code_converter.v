@@ -20,6 +20,12 @@ always @(bcd_digit) begin
 		7 : segments = 7'b1111000;
 		8 : segments = 7'b0000000;
 		9 : segments = 7'b0010000;
+		1'ha: segments = 7'b0001000;
+		1'hb: segments = 7'b0000011;
+		1'hc: segments = 7'b1000110;
+		1'hd: segments = 7'b0100001;
+		1'he: segments = 7'b0000110;
+		1'hf: segments = 7'b0001110;
 		default: segments = 7'b0000110;
 	endcase
 end
