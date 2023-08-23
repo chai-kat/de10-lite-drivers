@@ -145,11 +145,11 @@ bcd_code_converter bcc_red (
 );
 bcd_code_converter bcc_green (
 	.bcd_digit (SW[5:2]), 
-	.segments (HEX2[6:0])
+	.segments (HEX1[6:0])
 );
 bcd_code_converter bcc_blue (
 	.bcd_digit ({SW[1:0], key1_state, key0_state}), 
-	.segments (HEX2[6:0])
+	.segments (HEX0[6:0])
 );
 
 
@@ -180,26 +180,32 @@ end
 always @(VGA_CLK1_40) begin
 	if(key0_debouncing_state == 1'b0) begin
 		if (KEY[0] == 1'b0) begin
-			key0_state = ~key0_state;
+			key0_state = ~key0_state; // how to avoid key1_state becoming a latch? I though it would be clocked FF
 			key0_debouncing_state = 1'b1;
 		end
+		key0_debounce_counter <= 0;
 	end else begin
 		// if about to overflow, timer finished, so reset debouncing state
 		if(key0_debounce_counter == 16'hffff) begin
 			key0_debouncing_state = 1'b0;
+		end else begin
+			key0_debouncing_state = 1'b1; // without this line Quartus infers a latch? 
 		end
 		key0_debounce_counter <= key0_debounce_counter + 1;
 	end
 
 	if(key1_debouncing_state == 1'b0) begin
 		if (KEY[1] == 1'b0) begin
-			key1_state = ~key1_state;
+			key1_state = ~key1_state; // how to avoid key1_state becoming a latch? I though it would be clocked FF
 			key1_debouncing_state = 1'b1;
 		end
+		key1_debounce_counter <= 0;
 	end else begin
 		// if about to overflow, timer finished, so reset debouncing state
 		if(key1_debounce_counter == 16'hffff) begin
 			key1_debouncing_state = 1'b0;
+		end else begin
+			key1_debouncing_state = 1'b1; // without this line Quartus infers a latch? 
 		end
 		key1_debounce_counter <= key1_debounce_counter + 1;
 	end
