@@ -10,23 +10,22 @@ module bcd_code_converter(
 
 always @(bcd_digit) begin
 	case(bcd_digit)
-		0 : segments = 7'b1000000;
-		1 : segments = 7'b1111001;
-		2 : segments = 7'b0100100;
-		3 : segments = 7'b0110000;
-		4 : segments = 7'b0011001;
-		5 : segments = 7'b0010010;
-		6 : segments = 7'b0000010;
-		7 : segments = 7'b1111000;
-		8 : segments = 7'b0000000;
-		9 : segments = 7'b0010000;
+		1'h0: segments = 7'b1000000;
+		1'h1: segments = 7'b1111001;
+		1'h2: segments = 7'b0100100;
+		1'h3: segments = 7'b0110000;
+		1'h4: segments = 7'b0011001;
+		1'h5: segments = 7'b0010010;
+		1'h6: segments = 7'b0000010;
+		1'h7: segments = 7'b1111000;
+		1'h8: segments = 7'b0000000;
+		1'h9: segments = 7'b0010000;
 		1'ha: segments = 7'b0001000;
 		1'hb: segments = 7'b0000011;
 		1'hc: segments = 7'b1000110;
 		1'hd: segments = 7'b0100001;
 		1'he: segments = 7'b0000110;
 		1'hf: segments = 7'b0001110;
-		default: segments = 7'b0000110;
 	endcase
 end
 
