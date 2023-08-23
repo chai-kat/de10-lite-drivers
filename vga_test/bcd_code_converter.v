@@ -26,6 +26,7 @@ always @(bcd_digit) begin
 		1'hd: segments = 7'b0100001;
 		1'he: segments = 7'b0000110;
 		1'hf: segments = 7'b0001110;
+		default: segments = 7'b1111111; // without default, latch inferred?
 	endcase
 end
 

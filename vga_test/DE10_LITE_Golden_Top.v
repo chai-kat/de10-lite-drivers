@@ -191,7 +191,7 @@ always @(VGA_CLK1_40) begin
 		end else begin
 			key0_debouncing_state = 1'b1; // without this line Quartus infers a latch? 
 		end
-		key0_debounce_counter <= key0_debounce_counter + 1;
+		key0_debounce_counter = key0_debounce_counter + 1;
 	end
 
 	if(key1_debouncing_state == 1'b0) begin
@@ -207,7 +207,7 @@ always @(VGA_CLK1_40) begin
 		end else begin
 			key1_debouncing_state = 1'b1; // without this line Quartus infers a latch? 
 		end
-		key1_debounce_counter <= key1_debounce_counter + 1;
+		key1_debounce_counter = key1_debounce_counter + 1;
 	end
 end
 
