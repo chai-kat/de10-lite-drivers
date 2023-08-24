@@ -183,7 +183,7 @@ always @(VGA_CLK1_40) begin
 			key0_state = ~key0_state; // how to avoid key1_state becoming a latch? I though it would be clocked FF
 			key0_debouncing_state = 1'b1;
 		end
-		key0_debounce_counter <= 0;
+		key0_debounce_counter = 0;
 	end else begin
 		// if about to overflow, timer finished, so reset debouncing state
 		if(key0_debounce_counter == 16'hffff) begin
@@ -199,7 +199,7 @@ always @(VGA_CLK1_40) begin
 			key1_state = ~key1_state; // how to avoid key1_state becoming a latch? I though it would be clocked FF
 			key1_debouncing_state = 1'b1;
 		end
-		key1_debounce_counter <= 0;
+		key1_debounce_counter = 0;
 	end else begin
 		// if about to overflow, timer finished, so reset debouncing state
 		if(key1_debounce_counter == 16'hffff) begin

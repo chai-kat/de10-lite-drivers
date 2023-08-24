@@ -1,12 +1,12 @@
-Fitter Status : Successful - Sun Aug 13 01:05:38 2023
+Fitter Status : Successful - Thu Aug 24 02:02:37 2023
 Quartus Prime Version : 22.1std.1 Build 917 02/14/2023 SC Lite Edition
 Revision Name : vga_test
 Top-level Entity Name : DE10_LITE_Golden_Top
 Family : MAX 10
 Device : 10M50DAF484C6GES
 Timing Models : Preliminary
-Total logic elements : 79 / 49,760 ( < 1 % )
-    Total combinational functions : 79 / 49,760 ( < 1 % )
+Total logic elements : 154 / 49,760 ( < 1 % )
+    Total combinational functions : 154 / 49,760 ( < 1 % )
     Dedicated logic registers : 35 / 49,760 ( < 1 % )
 Total registers : 35
 Total pins : 185 / 360 ( 51 % )
