@@ -177,7 +177,9 @@ initial begin
 	key1_debouncing_state = 1'b0;
 end
 
-always @(vga_clk) begin
+
+// didn't use posedge so maybe considered combinational?
+always @(posedge vga_clk) begin
 	if(key0_debouncing_state == 1'b0) begin
 		if (KEY[0] == 1'b0) begin
 			key0_state = ~key0_state; // how to avoid key1_state becoming a latch? I though it would be clocked FF
