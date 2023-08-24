@@ -160,8 +160,9 @@ reg key1_state;
 // both keys have a schmitt trigger. a click of a button lasts on order of milliseconds
 // at 40 MHz, 65536 (2 ** 16) cycles is 1.6 ms
 // at 40 MHz, 1048576 (2 ** 20) cycles is 26 ms
-reg [19:0] key0_debounce_counter;
-reg [19:0] key1_debounce_counter;
+// at 40 MHz, 16777216 (2 ** 24) cycles is 419 ms
+reg [23:0] key0_debounce_counter;
+reg [23:0] key1_debounce_counter;
 
 reg key0_debouncing_state;
 reg key1_debouncing_state;
@@ -189,7 +190,7 @@ always @(posedge vga_clk) begin
 		key0_debounce_counter = 0;
 	end else begin
 		// if about to overflow, timer finished, so reset debouncing state
-		if(key0_debounce_counter == 20'hfffff) begin
+		if(key0_debounce_counter == 24'hfffff) begin
 			key0_debouncing_state = 1'b0;
 		end else begin
 			key0_debouncing_state = 1'b1; // without this line Quartus infers a latch? 
@@ -205,7 +206,7 @@ always @(posedge vga_clk) begin
 		key1_debounce_counter = 0;
 	end else begin
 		// if about to overflow, timer finished, so reset debouncing state
-		if(key1_debounce_counter == 20'hfffff) begin
+		if(key1_debounce_counter == 24'hfffff) begin
 			key1_debouncing_state = 1'b0;
 		end else begin
 			key1_debouncing_state = 1'b1; // without this line Quartus infers a latch? 
