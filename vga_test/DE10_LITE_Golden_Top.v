@@ -24,7 +24,7 @@
 `define ENABLE_VGA
 // `define ENABLE_ACCELEROMETER
 // `define ENABLE_ARDUINO
-// `define ENABLE_GPIO
+`define ENABLE_GPIO
 
 module DE10_LITE_Golden_Top(
 
@@ -126,9 +126,6 @@ module DE10_LITE_Golden_Top(
 //=======================================================
 //  REG/WIRE declarations
 //=======================================================
-
-// connect switches to LEDs
-assign LEDR <= SW;
 
 // turn decimal point off
 assign HEX0[7] = 1'b1;

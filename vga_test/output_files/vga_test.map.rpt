@@ -1,5 +1,5 @@
 Analysis & Synthesis report for vga_test
-Thu Aug 24 02:02:13 2023
+Thu Aug 24 15:17:38 2023
 Quartus Prime Version 22.1std.1 Build 917 02/14/2023 SC Lite Edition
 
 
@@ -51,7 +51,7 @@ https://fpgasoftware.intel.com/eula.
 +-------------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                        ;
 +------------------------------------+------------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Thu Aug 24 02:02:13 2023          ;
+; Analysis & Synthesis Status        ; Successful - Thu Aug 24 15:17:38 2023          ;
 ; Quartus Prime Version              ; 22.1std.1 Build 917 02/14/2023 SC Lite Edition ;
 ; Revision Name                      ; vga_test                                       ;
 ; Top-level Entity Name              ; DE10_LITE_Golden_Top                           ;
@@ -60,7 +60,7 @@ https://fpgasoftware.intel.com/eula.
 ;     Total combinational functions  ; 153                                            ;
 ;     Dedicated logic registers      ; 35                                             ;
 ; Total registers                    ; 35                                             ;
-; Total pins                         ; 185                                            ;
+; Total pins                         ; 122                                            ;
 ; Total virtual pins                 ; 0                                              ;
 ; Total memory bits                  ; 0                                              ;
 ; Embedded Multiplier 9-bit elements ; 0                                              ;
@@ -213,7 +213,7 @@ https://fpgasoftware.intel.com/eula.
 ;     -- Dedicated logic registers            ; 35                                                                                   ;
 ;     -- I/O registers                        ; 0                                                                                    ;
 ;                                             ;                                                                                      ;
-; I/O pins                                    ; 185                                                                                  ;
+; I/O pins                                    ; 122                                                                                  ;
 ;                                             ;                                                                                      ;
 ; Embedded Multiplier 9-bit elements          ; 0                                                                                    ;
 ;                                             ;                                                                                      ;
@@ -222,8 +222,8 @@ https://fpgasoftware.intel.com/eula.
 ;                                             ;                                                                                      ;
 ; Maximum fan-out node                        ; pll0:VGA_CLK1_40|altpll:altpll_component|pll0_altpll:auto_generated|wire_pll1_clk[0] ;
 ; Maximum fan-out                             ; 36                                                                                   ;
-; Total fan-out                               ; 882                                                                                  ;
-; Average fan-out                             ; 1.40                                                                                 ;
+; Total fan-out                               ; 784                                                                                  ;
+; Average fan-out                             ; 1.67                                                                                 ;
 +---------------------------------------------+--------------------------------------------------------------------------------------+
 
 
@@ -232,7 +232,7 @@ https://fpgasoftware.intel.com/eula.
 +---------------------------------------+---------------------+---------------------------+-------------+------------+--------------+---------+-----------+------+--------------+------------+-------------------------------------------------------------------------------------------+----------------------+--------------+
 ; Compilation Hierarchy Node            ; Combinational ALUTs ; Dedicated Logic Registers ; Memory Bits ; UFM Blocks ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; ADC blocks ; Full Hierarchy Name                                                                       ; Entity Name          ; Library Name ;
 +---------------------------------------+---------------------+---------------------------+-------------+------------+--------------+---------+-----------+------+--------------+------------+-------------------------------------------------------------------------------------------+----------------------+--------------+
-; |DE10_LITE_Golden_Top                 ; 153 (54)            ; 35 (0)                    ; 0           ; 0          ; 0            ; 0       ; 0         ; 185  ; 0            ; 0          ; |DE10_LITE_Golden_Top                                                                     ; DE10_LITE_Golden_Top ; work         ;
+; |DE10_LITE_Golden_Top                 ; 153 (54)            ; 35 (0)                    ; 0           ; 0          ; 0            ; 0       ; 0         ; 122  ; 0            ; 0          ; |DE10_LITE_Golden_Top                                                                     ; DE10_LITE_Golden_Top ; work         ;
 ;    |bcd_code_converter:bcc_blue|      ; 7 (7)               ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |DE10_LITE_Golden_Top|bcd_code_converter:bcc_blue                                         ; bcd_code_converter   ; work         ;
 ;    |bcd_code_converter:bcc_green|     ; 7 (7)               ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |DE10_LITE_Golden_Top|bcd_code_converter:bcc_green                                        ; bcd_code_converter   ; work         ;
 ;    |bcd_code_converter:bcc_red|       ; 7 (7)               ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |DE10_LITE_Golden_Top|bcd_code_converter:bcc_red                                          ; bcd_code_converter   ; work         ;
@@ -754,17 +754,17 @@ Note: In order to hide this table in the UI and the text report file, please set
 +-----------------------+-----------------------------+
 ; Type                  ; Count                       ;
 +-----------------------+-----------------------------+
-; boundary_port         ; 185                         ;
+; boundary_port         ; 122                         ;
 ; cycloneiii_ff         ; 35                          ;
 ;     ENA               ; 24                          ;
 ;     plain             ; 11                          ;
-; cycloneiii_io_obuf    ; 71                          ;
-; cycloneiii_lcell_comb ; 158                         ;
+; cycloneiii_io_obuf    ; 36                          ;
+; cycloneiii_lcell_comb ; 157                         ;
 ;     arith             ; 47                          ;
 ;         2 data inputs ; 19                          ;
 ;         3 data inputs ; 28                          ;
-;     normal            ; 111                         ;
-;         0 data inputs ; 2                           ;
+;     normal            ; 110                         ;
+;         0 data inputs ; 1                           ;
 ;         1 data inputs ; 7                           ;
 ;         2 data inputs ; 20                          ;
 ;         3 data inputs ; 9                           ;
@@ -772,7 +772,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 ; cycloneiii_pll        ; 1                           ;
 ;                       ;                             ;
 ; Max LUT depth         ; 5.00                        ;
-; Average LUT depth     ; 2.18                        ;
+; Average LUT depth     ; 2.42                        ;
 +-----------------------+-----------------------------+
 
 
@@ -791,7 +791,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 22.1std.1 Build 917 02/14/2023 SC Lite Edition
-    Info: Processing started: Thu Aug 24 02:02:03 2023
+    Info: Processing started: Thu Aug 24 15:17:28 2023
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off vga_test -c vga_test
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (20030): Parallel compilation is enabled and will use 16 of the 16 processors detected
@@ -822,18 +822,6 @@ Warning (10240): Verilog HDL Always Construct warning at DE10_LITE_Golden_Top.v(
 Warning (10240): Verilog HDL Always Construct warning at DE10_LITE_Golden_Top.v(180): inferring latch(es) for variable "key0_debouncing_state", which holds its previous value in one or more paths through the always construct File: /home/chaitanya/Documents/QuartusProjects/de10-lite-drivers/vga_test/DE10_LITE_Golden_Top.v Line: 180
 Warning (10240): Verilog HDL Always Construct warning at DE10_LITE_Golden_Top.v(180): inferring latch(es) for variable "key1_state", which holds its previous value in one or more paths through the always construct File: /home/chaitanya/Documents/QuartusProjects/de10-lite-drivers/vga_test/DE10_LITE_Golden_Top.v Line: 180
 Warning (10240): Verilog HDL Always Construct warning at DE10_LITE_Golden_Top.v(180): inferring latch(es) for variable "key1_debouncing_state", which holds its previous value in one or more paths through the always construct File: /home/chaitanya/Documents/QuartusProjects/de10-lite-drivers/vga_test/DE10_LITE_Golden_Top.v Line: 180
-Warning (10034): Output port "DRAM_ADDR" at DE10_LITE_Golden_Top.v(46) has no driver File: /home/chaitanya/Documents/QuartusProjects/de10-lite-drivers/vga_test/DE10_LITE_Golden_Top.v Line: 46
-Warning (10034): Output port "DRAM_BA" at DE10_LITE_Golden_Top.v(47) has no driver File: /home/chaitanya/Documents/QuartusProjects/de10-lite-drivers/vga_test/DE10_LITE_Golden_Top.v Line: 47
-Warning (10034): Output port "DRAM_CAS_N" at DE10_LITE_Golden_Top.v(48) has no driver File: /home/chaitanya/Documents/QuartusProjects/de10-lite-drivers/vga_test/DE10_LITE_Golden_Top.v Line: 48
-Warning (10034): Output port "DRAM_CKE" at DE10_LITE_Golden_Top.v(49) has no driver File: /home/chaitanya/Documents/QuartusProjects/de10-lite-drivers/vga_test/DE10_LITE_Golden_Top.v Line: 49
-Warning (10034): Output port "DRAM_CLK" at DE10_LITE_Golden_Top.v(50) has no driver File: /home/chaitanya/Documents/QuartusProjects/de10-lite-drivers/vga_test/DE10_LITE_Golden_Top.v Line: 50
-Warning (10034): Output port "DRAM_CS_N" at DE10_LITE_Golden_Top.v(51) has no driver File: /home/chaitanya/Documents/QuartusProjects/de10-lite-drivers/vga_test/DE10_LITE_Golden_Top.v Line: 51
-Warning (10034): Output port "DRAM_LDQM" at DE10_LITE_Golden_Top.v(53) has no driver File: /home/chaitanya/Documents/QuartusProjects/de10-lite-drivers/vga_test/DE10_LITE_Golden_Top.v Line: 53
-Warning (10034): Output port "DRAM_RAS_N" at DE10_LITE_Golden_Top.v(54) has no driver File: /home/chaitanya/Documents/QuartusProjects/de10-lite-drivers/vga_test/DE10_LITE_Golden_Top.v Line: 54
-Warning (10034): Output port "DRAM_UDQM" at DE10_LITE_Golden_Top.v(55) has no driver File: /home/chaitanya/Documents/QuartusProjects/de10-lite-drivers/vga_test/DE10_LITE_Golden_Top.v Line: 55
-Warning (10034): Output port "DRAM_WE_N" at DE10_LITE_Golden_Top.v(56) has no driver File: /home/chaitanya/Documents/QuartusProjects/de10-lite-drivers/vga_test/DE10_LITE_Golden_Top.v Line: 56
-Warning (10034): Output port "GSENSOR_CS_N" at DE10_LITE_Golden_Top.v(105) has no driver File: /home/chaitanya/Documents/QuartusProjects/de10-lite-drivers/vga_test/DE10_LITE_Golden_Top.v Line: 105
-Warning (10034): Output port "GSENSOR_SCLK" at DE10_LITE_Golden_Top.v(107) has no driver File: /home/chaitanya/Documents/QuartusProjects/de10-lite-drivers/vga_test/DE10_LITE_Golden_Top.v Line: 107
 Info (10041): Inferred latch for "key1_debouncing_state" at DE10_LITE_Golden_Top.v(205) File: /home/chaitanya/Documents/QuartusProjects/de10-lite-drivers/vga_test/DE10_LITE_Golden_Top.v Line: 205
 Info (10041): Inferred latch for "key1_state" at DE10_LITE_Golden_Top.v(205) File: /home/chaitanya/Documents/QuartusProjects/de10-lite-drivers/vga_test/DE10_LITE_Golden_Top.v Line: 205
 Info (10041): Inferred latch for "key0_debouncing_state" at DE10_LITE_Golden_Top.v(189) File: /home/chaitanya/Documents/QuartusProjects/de10-lite-drivers/vga_test/DE10_LITE_Golden_Top.v Line: 189
@@ -922,41 +910,6 @@ Warning (10230): Verilog HDL assignment warning at vga_driver.v(177): truncated 
 Warning (10230): Verilog HDL assignment warning at vga_driver.v(192): truncated value with size 32 to match size of target (10) File: /home/chaitanya/Documents/QuartusProjects/de10-lite-drivers/vga_test/vga_driver.v Line: 192
 Warning (10230): Verilog HDL assignment warning at vga_driver.v(195): truncated value with size 32 to match size of target (11) File: /home/chaitanya/Documents/QuartusProjects/de10-lite-drivers/vga_test/vga_driver.v Line: 195
 Warning (13039): The following bidirectional pins have no drivers
-    Warning (13040): bidirectional pin "DRAM_DQ[0]" has no driver File: /home/chaitanya/Documents/QuartusProjects/de10-lite-drivers/vga_test/DE10_LITE_Golden_Top.v Line: 52
-    Warning (13040): bidirectional pin "DRAM_DQ[1]" has no driver File: /home/chaitanya/Documents/QuartusProjects/de10-lite-drivers/vga_test/DE10_LITE_Golden_Top.v Line: 52
-    Warning (13040): bidirectional pin "DRAM_DQ[2]" has no driver File: /home/chaitanya/Documents/QuartusProjects/de10-lite-drivers/vga_test/DE10_LITE_Golden_Top.v Line: 52
-    Warning (13040): bidirectional pin "DRAM_DQ[3]" has no driver File: /home/chaitanya/Documents/QuartusProjects/de10-lite-drivers/vga_test/DE10_LITE_Golden_Top.v Line: 52
-    Warning (13040): bidirectional pin "DRAM_DQ[4]" has no driver File: /home/chaitanya/Documents/QuartusProjects/de10-lite-drivers/vga_test/DE10_LITE_Golden_Top.v Line: 52
-    Warning (13040): bidirectional pin "DRAM_DQ[5]" has no driver File: /home/chaitanya/Documents/QuartusProjects/de10-lite-drivers/vga_test/DE10_LITE_Golden_Top.v Line: 52
-    Warning (13040): bidirectional pin "DRAM_DQ[6]" has no driver File: /home/chaitanya/Documents/QuartusProjects/de10-lite-drivers/vga_test/DE10_LITE_Golden_Top.v Line: 52
-    Warning (13040): bidirectional pin "DRAM_DQ[7]" has no driver File: /home/chaitanya/Documents/QuartusProjects/de10-lite-drivers/vga_test/DE10_LITE_Golden_Top.v Line: 52
-    Warning (13040): bidirectional pin "DRAM_DQ[8]" has no driver File: /home/chaitanya/Documents/QuartusProjects/de10-lite-drivers/vga_test/DE10_LITE_Golden_Top.v Line: 52
-    Warning (13040): bidirectional pin "DRAM_DQ[9]" has no driver File: /home/chaitanya/Documents/QuartusProjects/de10-lite-drivers/vga_test/DE10_LITE_Golden_Top.v Line: 52
-    Warning (13040): bidirectional pin "DRAM_DQ[10]" has no driver File: /home/chaitanya/Documents/QuartusProjects/de10-lite-drivers/vga_test/DE10_LITE_Golden_Top.v Line: 52
-    Warning (13040): bidirectional pin "DRAM_DQ[11]" has no driver File: /home/chaitanya/Documents/QuartusProjects/de10-lite-drivers/vga_test/DE10_LITE_Golden_Top.v Line: 52
-    Warning (13040): bidirectional pin "DRAM_DQ[12]" has no driver File: /home/chaitanya/Documents/QuartusProjects/de10-lite-drivers/vga_test/DE10_LITE_Golden_Top.v Line: 52
-    Warning (13040): bidirectional pin "DRAM_DQ[13]" has no driver File: /home/chaitanya/Documents/QuartusProjects/de10-lite-drivers/vga_test/DE10_LITE_Golden_Top.v Line: 52
-    Warning (13040): bidirectional pin "DRAM_DQ[14]" has no driver File: /home/chaitanya/Documents/QuartusProjects/de10-lite-drivers/vga_test/DE10_LITE_Golden_Top.v Line: 52
-    Warning (13040): bidirectional pin "DRAM_DQ[15]" has no driver File: /home/chaitanya/Documents/QuartusProjects/de10-lite-drivers/vga_test/DE10_LITE_Golden_Top.v Line: 52
-    Warning (13040): bidirectional pin "GSENSOR_SDI" has no driver File: /home/chaitanya/Documents/QuartusProjects/de10-lite-drivers/vga_test/DE10_LITE_Golden_Top.v Line: 108
-    Warning (13040): bidirectional pin "GSENSOR_SDO" has no driver File: /home/chaitanya/Documents/QuartusProjects/de10-lite-drivers/vga_test/DE10_LITE_Golden_Top.v Line: 109
-    Warning (13040): bidirectional pin "ARDUINO_IO[0]" has no driver File: /home/chaitanya/Documents/QuartusProjects/de10-lite-drivers/vga_test/DE10_LITE_Golden_Top.v Line: 114
-    Warning (13040): bidirectional pin "ARDUINO_IO[1]" has no driver File: /home/chaitanya/Documents/QuartusProjects/de10-lite-drivers/vga_test/DE10_LITE_Golden_Top.v Line: 114
-    Warning (13040): bidirectional pin "ARDUINO_IO[2]" has no driver File: /home/chaitanya/Documents/QuartusProjects/de10-lite-drivers/vga_test/DE10_LITE_Golden_Top.v Line: 114
-    Warning (13040): bidirectional pin "ARDUINO_IO[3]" has no driver File: /home/chaitanya/Documents/QuartusProjects/de10-lite-drivers/vga_test/DE10_LITE_Golden_Top.v Line: 114
-    Warning (13040): bidirectional pin "ARDUINO_IO[4]" has no driver File: /home/chaitanya/Documents/QuartusProjects/de10-lite-drivers/vga_test/DE10_LITE_Golden_Top.v Line: 114
-    Warning (13040): bidirectional pin "ARDUINO_IO[5]" has no driver File: /home/chaitanya/Documents/QuartusProjects/de10-lite-drivers/vga_test/DE10_LITE_Golden_Top.v Line: 114
-    Warning (13040): bidirectional pin "ARDUINO_IO[6]" has no driver File: /home/chaitanya/Documents/QuartusProjects/de10-lite-drivers/vga_test/DE10_LITE_Golden_Top.v Line: 114
-    Warning (13040): bidirectional pin "ARDUINO_IO[7]" has no driver File: /home/chaitanya/Documents/QuartusProjects/de10-lite-drivers/vga_test/DE10_LITE_Golden_Top.v Line: 114
-    Warning (13040): bidirectional pin "ARDUINO_IO[8]" has no driver File: /home/chaitanya/Documents/QuartusProjects/de10-lite-drivers/vga_test/DE10_LITE_Golden_Top.v Line: 114
-    Warning (13040): bidirectional pin "ARDUINO_IO[9]" has no driver File: /home/chaitanya/Documents/QuartusProjects/de10-lite-drivers/vga_test/DE10_LITE_Golden_Top.v Line: 114
-    Warning (13040): bidirectional pin "ARDUINO_IO[10]" has no driver File: /home/chaitanya/Documents/QuartusProjects/de10-lite-drivers/vga_test/DE10_LITE_Golden_Top.v Line: 114
-    Warning (13040): bidirectional pin "ARDUINO_IO[11]" has no driver File: /home/chaitanya/Documents/QuartusProjects/de10-lite-drivers/vga_test/DE10_LITE_Golden_Top.v Line: 114
-    Warning (13040): bidirectional pin "ARDUINO_IO[12]" has no driver File: /home/chaitanya/Documents/QuartusProjects/de10-lite-drivers/vga_test/DE10_LITE_Golden_Top.v Line: 114
-    Warning (13040): bidirectional pin "ARDUINO_IO[13]" has no driver File: /home/chaitanya/Documents/QuartusProjects/de10-lite-drivers/vga_test/DE10_LITE_Golden_Top.v Line: 114
-    Warning (13040): bidirectional pin "ARDUINO_IO[14]" has no driver File: /home/chaitanya/Documents/QuartusProjects/de10-lite-drivers/vga_test/DE10_LITE_Golden_Top.v Line: 114
-    Warning (13040): bidirectional pin "ARDUINO_IO[15]" has no driver File: /home/chaitanya/Documents/QuartusProjects/de10-lite-drivers/vga_test/DE10_LITE_Golden_Top.v Line: 114
-    Warning (13040): bidirectional pin "ARDUINO_RESET_N" has no driver File: /home/chaitanya/Documents/QuartusProjects/de10-lite-drivers/vga_test/DE10_LITE_Golden_Top.v Line: 115
     Warning (13040): bidirectional pin "GPIO[0]" has no driver File: /home/chaitanya/Documents/QuartusProjects/de10-lite-drivers/vga_test/DE10_LITE_Golden_Top.v Line: 122
     Warning (13040): bidirectional pin "GPIO[1]" has no driver File: /home/chaitanya/Documents/QuartusProjects/de10-lite-drivers/vga_test/DE10_LITE_Golden_Top.v Line: 122
     Warning (13040): bidirectional pin "GPIO[2]" has no driver File: /home/chaitanya/Documents/QuartusProjects/de10-lite-drivers/vga_test/DE10_LITE_Golden_Top.v Line: 122
@@ -998,29 +951,6 @@ Warning (13012): Latch key0_debouncing_state has unsafe behavior File: /home/cha
 Warning (13012): Latch key1_debouncing_state has unsafe behavior File: /home/chaitanya/Documents/QuartusProjects/de10-lite-drivers/vga_test/DE10_LITE_Golden_Top.v Line: 166
     Warning (13013): Ports D and ENA on the latch are fed by the same signal key1_debouncing_state File: /home/chaitanya/Documents/QuartusProjects/de10-lite-drivers/vga_test/DE10_LITE_Golden_Top.v Line: 166
 Warning (13024): Output pins are stuck at VCC or GND
-    Warning (13410): Pin "DRAM_ADDR[0]" is stuck at GND File: /home/chaitanya/Documents/QuartusProjects/de10-lite-drivers/vga_test/DE10_LITE_Golden_Top.v Line: 46
-    Warning (13410): Pin "DRAM_ADDR[1]" is stuck at GND File: /home/chaitanya/Documents/QuartusProjects/de10-lite-drivers/vga_test/DE10_LITE_Golden_Top.v Line: 46
-    Warning (13410): Pin "DRAM_ADDR[2]" is stuck at GND File: /home/chaitanya/Documents/QuartusProjects/de10-lite-drivers/vga_test/DE10_LITE_Golden_Top.v Line: 46
-    Warning (13410): Pin "DRAM_ADDR[3]" is stuck at GND File: /home/chaitanya/Documents/QuartusProjects/de10-lite-drivers/vga_test/DE10_LITE_Golden_Top.v Line: 46
-    Warning (13410): Pin "DRAM_ADDR[4]" is stuck at GND File: /home/chaitanya/Documents/QuartusProjects/de10-lite-drivers/vga_test/DE10_LITE_Golden_Top.v Line: 46
-    Warning (13410): Pin "DRAM_ADDR[5]" is stuck at GND File: /home/chaitanya/Documents/QuartusProjects/de10-lite-drivers/vga_test/DE10_LITE_Golden_Top.v Line: 46
-    Warning (13410): Pin "DRAM_ADDR[6]" is stuck at GND File: /home/chaitanya/Documents/QuartusProjects/de10-lite-drivers/vga_test/DE10_LITE_Golden_Top.v Line: 46
-    Warning (13410): Pin "DRAM_ADDR[7]" is stuck at GND File: /home/chaitanya/Documents/QuartusProjects/de10-lite-drivers/vga_test/DE10_LITE_Golden_Top.v Line: 46
-    Warning (13410): Pin "DRAM_ADDR[8]" is stuck at GND File: /home/chaitanya/Documents/QuartusProjects/de10-lite-drivers/vga_test/DE10_LITE_Golden_Top.v Line: 46
-    Warning (13410): Pin "DRAM_ADDR[9]" is stuck at GND File: /home/chaitanya/Documents/QuartusProjects/de10-lite-drivers/vga_test/DE10_LITE_Golden_Top.v Line: 46
-    Warning (13410): Pin "DRAM_ADDR[10]" is stuck at GND File: /home/chaitanya/Documents/QuartusProjects/de10-lite-drivers/vga_test/DE10_LITE_Golden_Top.v Line: 46
-    Warning (13410): Pin "DRAM_ADDR[11]" is stuck at GND File: /home/chaitanya/Documents/QuartusProjects/de10-lite-drivers/vga_test/DE10_LITE_Golden_Top.v Line: 46
-    Warning (13410): Pin "DRAM_ADDR[12]" is stuck at GND File: /home/chaitanya/Documents/QuartusProjects/de10-lite-drivers/vga_test/DE10_LITE_Golden_Top.v Line: 46
-    Warning (13410): Pin "DRAM_BA[0]" is stuck at GND File: /home/chaitanya/Documents/QuartusProjects/de10-lite-drivers/vga_test/DE10_LITE_Golden_Top.v Line: 47
-    Warning (13410): Pin "DRAM_BA[1]" is stuck at GND File: /home/chaitanya/Documents/QuartusProjects/de10-lite-drivers/vga_test/DE10_LITE_Golden_Top.v Line: 47
-    Warning (13410): Pin "DRAM_CAS_N" is stuck at GND File: /home/chaitanya/Documents/QuartusProjects/de10-lite-drivers/vga_test/DE10_LITE_Golden_Top.v Line: 48
-    Warning (13410): Pin "DRAM_CKE" is stuck at GND File: /home/chaitanya/Documents/QuartusProjects/de10-lite-drivers/vga_test/DE10_LITE_Golden_Top.v Line: 49
-    Warning (13410): Pin "DRAM_CLK" is stuck at GND File: /home/chaitanya/Documents/QuartusProjects/de10-lite-drivers/vga_test/DE10_LITE_Golden_Top.v Line: 50
-    Warning (13410): Pin "DRAM_CS_N" is stuck at GND File: /home/chaitanya/Documents/QuartusProjects/de10-lite-drivers/vga_test/DE10_LITE_Golden_Top.v Line: 51
-    Warning (13410): Pin "DRAM_LDQM" is stuck at GND File: /home/chaitanya/Documents/QuartusProjects/de10-lite-drivers/vga_test/DE10_LITE_Golden_Top.v Line: 53
-    Warning (13410): Pin "DRAM_RAS_N" is stuck at GND File: /home/chaitanya/Documents/QuartusProjects/de10-lite-drivers/vga_test/DE10_LITE_Golden_Top.v Line: 54
-    Warning (13410): Pin "DRAM_UDQM" is stuck at GND File: /home/chaitanya/Documents/QuartusProjects/de10-lite-drivers/vga_test/DE10_LITE_Golden_Top.v Line: 55
-    Warning (13410): Pin "DRAM_WE_N" is stuck at GND File: /home/chaitanya/Documents/QuartusProjects/de10-lite-drivers/vga_test/DE10_LITE_Golden_Top.v Line: 56
     Warning (13410): Pin "HEX0[7]" is stuck at VCC File: /home/chaitanya/Documents/QuartusProjects/de10-lite-drivers/vga_test/DE10_LITE_Golden_Top.v Line: 61
     Warning (13410): Pin "HEX1[7]" is stuck at VCC File: /home/chaitanya/Documents/QuartusProjects/de10-lite-drivers/vga_test/DE10_LITE_Golden_Top.v Line: 64
     Warning (13410): Pin "HEX2[7]" is stuck at VCC File: /home/chaitanya/Documents/QuartusProjects/de10-lite-drivers/vga_test/DE10_LITE_Golden_Top.v Line: 67
@@ -1048,26 +978,21 @@ Warning (13024): Output pins are stuck at VCC or GND
     Warning (13410): Pin "HEX5[5]" is stuck at VCC File: /home/chaitanya/Documents/QuartusProjects/de10-lite-drivers/vga_test/DE10_LITE_Golden_Top.v Line: 76
     Warning (13410): Pin "HEX5[6]" is stuck at VCC File: /home/chaitanya/Documents/QuartusProjects/de10-lite-drivers/vga_test/DE10_LITE_Golden_Top.v Line: 76
     Warning (13410): Pin "HEX5[7]" is stuck at VCC File: /home/chaitanya/Documents/QuartusProjects/de10-lite-drivers/vga_test/DE10_LITE_Golden_Top.v Line: 76
-    Warning (13410): Pin "GSENSOR_CS_N" is stuck at GND File: /home/chaitanya/Documents/QuartusProjects/de10-lite-drivers/vga_test/DE10_LITE_Golden_Top.v Line: 105
-    Warning (13410): Pin "GSENSOR_SCLK" is stuck at GND File: /home/chaitanya/Documents/QuartusProjects/de10-lite-drivers/vga_test/DE10_LITE_Golden_Top.v Line: 107
 Info (286030): Timing-Driven Synthesis is running
 Info (144001): Generated suppressed messages file /home/chaitanya/Documents/QuartusProjects/de10-lite-drivers/vga_test/output_files/vga_test.map.smsg
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 1 node(s), including 0 DDIO, 1 PLL, 0 transceiver and 0 LCELL
-Warning (21074): Design contains 4 input pin(s) that do not drive logic
-    Warning (15610): No output dependent on input pin "ADC_CLK_10" File: /home/chaitanya/Documents/QuartusProjects/de10-lite-drivers/vga_test/DE10_LITE_Golden_Top.v Line: 33
+Warning (21074): Design contains 1 input pin(s) that do not drive logic
     Warning (15610): No output dependent on input pin "MAX10_CLK2_50" File: /home/chaitanya/Documents/QuartusProjects/de10-lite-drivers/vga_test/DE10_LITE_Golden_Top.v Line: 41
-    Warning (15610): No output dependent on input pin "GSENSOR_INT[1]" File: /home/chaitanya/Documents/QuartusProjects/de10-lite-drivers/vga_test/DE10_LITE_Golden_Top.v Line: 106
-    Warning (15610): No output dependent on input pin "GSENSOR_INT[2]" File: /home/chaitanya/Documents/QuartusProjects/de10-lite-drivers/vga_test/DE10_LITE_Golden_Top.v Line: 106
-Info (21057): Implemented 339 device resources after synthesis - the final resource count might be different
-    Info (21058): Implemented 17 input pins
-    Info (21059): Implemented 97 output pins
-    Info (21060): Implemented 71 bidirectional pins
+Info (21057): Implemented 276 device resources after synthesis - the final resource count might be different
+    Info (21058): Implemented 14 input pins
+    Info (21059): Implemented 72 output pins
+    Info (21060): Implemented 36 bidirectional pins
     Info (21061): Implemented 153 logic cells
     Info (21065): Implemented 1 PLLs
-Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 183 warnings
-    Info: Peak virtual memory: 516 megabytes
-    Info: Processing ended: Thu Aug 24 02:02:13 2023
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 108 warnings
+    Info: Peak virtual memory: 500 megabytes
+    Info: Processing ended: Thu Aug 24 15:17:38 2023
     Info: Elapsed time: 00:00:10
     Info: Total CPU time (on all processors): 00:00:29
 

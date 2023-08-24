@@ -1,4 +1,4 @@
-Analysis & Synthesis Status : Successful - Thu Aug 24 02:02:13 2023
+Analysis & Synthesis Status : Successful - Thu Aug 24 15:17:38 2023
 Quartus Prime Version : 22.1std.1 Build 917 02/14/2023 SC Lite Edition
 Revision Name : vga_test
 Top-level Entity Name : DE10_LITE_Golden_Top
@@ -7,7 +7,7 @@ Total logic elements : 153
     Total combinational functions : 153
     Dedicated logic registers : 35
 Total registers : 35
-Total pins : 185
+Total pins : 122
 Total virtual pins : 0
 Total memory bits : 0
 Embedded Multiplier 9-bit elements : 0

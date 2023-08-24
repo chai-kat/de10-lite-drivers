@@ -1,5 +1,5 @@
 Assembler report for vga_test
-Thu Aug 24 02:02:46 2023
+Thu Aug 24 15:18:08 2023
 Quartus Prime Version 22.1std.1 Build 917 02/14/2023 SC Lite Edition
 
 
@@ -38,7 +38,7 @@ https://fpgasoftware.intel.com/eula.
 +---------------------------------------------------------------+
 ; Assembler Summary                                             ;
 +-----------------------+---------------------------------------+
-; Assembler Status      ; Successful - Thu Aug 24 02:02:46 2023 ;
+; Assembler Status      ; Successful - Thu Aug 24 15:18:08 2023 ;
 ; Revision Name         ; vga_test                              ;
 ; Top-level Entity Name ; DE10_LITE_Golden_Top                  ;
 ; Family                ; MAX 10                                ;
@@ -67,8 +67,8 @@ https://fpgasoftware.intel.com/eula.
 +----------------+-----------------------+
 ; Option         ; Setting               ;
 +----------------+-----------------------+
-; JTAG usercode  ; 0x00292288            ;
-; Checksum       ; 0x00292288            ;
+; JTAG usercode  ; 0x0028DD2F            ;
+; Checksum       ; 0x0028DD2F            ;
 +----------------+-----------------------+
 
 
@@ -78,14 +78,14 @@ https://fpgasoftware.intel.com/eula.
 Info: *******************************************************************
 Info: Running Quartus Prime Assembler
     Info: Version 22.1std.1 Build 917 02/14/2023 SC Lite Edition
-    Info: Processing started: Thu Aug 24 02:02:40 2023
+    Info: Processing started: Thu Aug 24 15:18:02 2023
 Info: Command: quartus_asm --read_settings_files=off --write_settings_files=off vga_test -c vga_test
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (115031): Writing out detailed assembly data for power analysis
 Info (115030): Assembler is generating device programming files
 Info: Quartus Prime Assembler was successful. 0 errors, 1 warning
-    Info: Peak virtual memory: 406 megabytes
-    Info: Processing ended: Thu Aug 24 02:02:46 2023
+    Info: Peak virtual memory: 393 megabytes
+    Info: Processing ended: Thu Aug 24 15:18:08 2023
     Info: Elapsed time: 00:00:06
     Info: Total CPU time (on all processors): 00:00:06
 
