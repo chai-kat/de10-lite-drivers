@@ -184,32 +184,32 @@ end
 always @(posedge vga_clk) begin
 	if(key0_debouncing_state == 1'b0) begin
 		if (KEY[0] == 1'b0) begin
-			key0_state = ~key0_state; // how to avoid key1_state becoming a latch? I though it would be clocked FF
+			key0_state = ~key0_state;
 			key0_debouncing_state = 1'b1;
 		end
 		key0_debounce_counter = 0;
 	end else begin
 		// if about to overflow, timer finished, so reset debouncing state
-		if(key0_debounce_counter == 24'hfffff) begin
+		if(key0_debounce_counter == 24'hffffff) begin
 			key0_debouncing_state = 1'b0;
 		end else begin
-			key0_debouncing_state = 1'b1; // without this line Quartus infers a latch? 
+			key0_debouncing_state = 1'b1;
 		end
 		key0_debounce_counter = key0_debounce_counter + 1;
 	end
 
 	if(key1_debouncing_state == 1'b0) begin
 		if (KEY[1] == 1'b0) begin
-			key1_state = ~key1_state; // how to avoid key1_state becoming a latch? I though it would be clocked FF
+			key1_state = ~key1_state;
 			key1_debouncing_state = 1'b1;
 		end
 		key1_debounce_counter = 0;
 	end else begin
 		// if about to overflow, timer finished, so reset debouncing state
-		if(key1_debounce_counter == 24'hfffff) begin
+		if(key1_debounce_counter == 24'hffffff) begin
 			key1_debouncing_state = 1'b0;
 		end else begin
-			key1_debouncing_state = 1'b1; // without this line Quartus infers a latch? 
+			key1_debouncing_state = 1'b1;
 		end
 		key1_debounce_counter = key1_debounce_counter + 1;
 	end
