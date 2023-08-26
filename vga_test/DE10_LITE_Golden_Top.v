@@ -180,7 +180,6 @@ initial begin
 end
 
 
-// didn't use posedge so maybe considered combinational?
 always @(posedge vga_clk) begin
 	if(key0_debouncing_state == 1'b0) begin
 		if (KEY[0] == 1'b0) begin
@@ -192,8 +191,6 @@ always @(posedge vga_clk) begin
 		// if about to overflow, timer finished, so reset debouncing state
 		if(key0_debounce_counter == 24'hffffff) begin
 			key0_debouncing_state = 1'b0;
-		end else begin
-			key0_debouncing_state = 1'b1;
 		end
 		key0_debounce_counter = key0_debounce_counter + 1;
 	end
@@ -208,8 +205,6 @@ always @(posedge vga_clk) begin
 		// if about to overflow, timer finished, so reset debouncing state
 		if(key1_debounce_counter == 24'hffffff) begin
 			key1_debouncing_state = 1'b0;
-		end else begin
-			key1_debouncing_state = 1'b1;
 		end
 		key1_debounce_counter = key1_debounce_counter + 1;
 	end
@@ -246,6 +241,7 @@ vga_driver #(
     // 1 for positive HSYNC pulse (i.e starts low goes high)
     // 0 for negative HSYNC pulse (i.e. starts high goes low)
     .HSYNC_POLARITY(1'b1),
+	// same as above for VSYNC pulse
     .VSYNC_POLARITY(1'b1)
 )
 
